@@ -1,0 +1,136 @@
+<head>
+    <title>Prog-C Midterm</title>
+    <link rel="stylesheet" href="./default.min.css">
+    <script src="./highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+<div class="content">
+
+<h2>Lösungen ohne Gewähr! Kein Anspruch auf Rückerstattung!</h2>
+
+<!--─────────────────────start─────────────────────-->
+
+<hr>
+    <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 5 über die Tastatur eingibt?</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int main(){
+    int i;
+    printf("%d\n", scanf("%d", &i));
+    return 0;
+}
+</code></pre>
+    <form id="inputform" autocomplete="off">
+    <label id="in" class="right"><input type="radio" name="1">1</label><br>
+    <label id="in"><input type="radio" name="1">5</label><br>
+    <label id="in"><input type="radio" name="1">0</label><br>
+    <label id="in"><input type="radio" name="1">Keine, weil scanf call by reference erwartet</label>
+    </form>
+<hr>
+    <p>Welche der folgenden Aussagen über den 'struct' treffen zu? (3 richtige Antworten)</p>
+    <form id="checkform" autocomplete="off">
+    <label id="check" class="right"><input type="checkbox" name="1">Variablen vom struct-Typ können lokal oder global sein.</label><br>
+    <label id="check" class="right"><input type="checkbox" name="1">struct-Elemente können bei ihrer Definition initialisiert werden.</label><br>
+    <label id="check" class="right"><input type="checkbox" name="1">Mit struct können neue Datentypen definiert werden.</label><br>
+    <label id="check"><input type="checkbox" name="1">Wenn ein struct definiert wird, wird der Speicherplatz reserviert.</label><br>
+    <label id="check"><input type="checkbox" name="1">Der Zugriff auf ein struct-Element erfolgt mit dem '&gt;' Operator.</label><br>
+    <label id="check"><input type="checkbox" name="1">structs können keine structs enthalten.</label><br>
+    <input type="submit" value="Senden">
+</form>
+<hr>
+
+<!--─────────────────────end─────────────────────-->
+
+</div>
+<footer style="text-align: center; padding: 20px 0; background-color: grey;"><a href="https://example.com" style="color: blue; font-size: 20px;">Besuch mich auf Github!</a></footer>
+
+</body>
+
+<script>
+
+    const items = document.querySelectorAll('#in');
+    items.forEach(setUpClick);
+    function setUpClick(items) {
+        items.setAttribute('onclick', 'answer(this);')
+    }
+
+    function answer(el){
+        el.parentNode.classList.add('select');
+        el.setAttribute('disabled', '')
+    };
+
+    const checks = document.querySelectorAll('#checkform');
+    checks.forEach(setUpCheck);
+    function setUpCheck(checks) {
+        checks.setAttribute('onsubmit', 'return validateForm(this);');
+        checks.setAttribute('action', 'javascript:void(0);');
+    }
+
+    function validateForm(el) {
+        el.classList.add('select');
+    }
+</script>
+<style>
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+body {
+    margin: 0;
+}
+.content {
+    width: 50vw;
+    margin: 20px 0 100px 25vw;
+}
+body form *{
+    display: inline-block;
+    font-size: 20px;
+}
+hr {
+    color: black;
+}
+p {
+    font-weight: bold;
+    font-size: 25px !important;
+}
+code *, code{
+    font-family: monospace;
+    font-size: 18px;
+}
+form {
+    margin: 0;
+}
+label {
+    padding: 5px 15px 8px 8px;
+    border-radius: 15px;
+    margin: 5px;
+    width: 100%;
+}
+input{
+    margin-right: 10px;
+}
+.select {
+    cursor: not-allowed;
+}
+.select * {
+    pointer-events: none;
+}
+.select .right{
+    background-color: rgb(93, 202, 93);
+}
+input[type="submit"] {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    border: 3px solid #04aa6d;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+input[type="submit"]:hover {
+    background-color: #04aa6d;
+}
+</style>
