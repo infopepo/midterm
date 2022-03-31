@@ -9,3 +9,5 @@ Falls nicht: alle Texte wurden von Screenshots abgetippt, dabei können durchaus
 Bitte verbeitet diese Repository nur unter Studenten und gebt es nicht als eure Arbeit aus.
 
 Die Tests müsst ihr nicht herunter laden, hier ist der Link zur Github Seite: 
+
+#Sollten in einem Semester Fragen dazu kommen bist du herzlich dazu eingeladen die Musterlösung hier als Issue zu posten, damit ich den Test erweitern kann.
