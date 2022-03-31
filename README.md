@@ -6,8 +6,8 @@ Fast alle Fragen sind genau so in den Tests vorgekommen, die anderen wurden entw
 
 Falls nicht: alle Texte wurden von Screenshots abgetippt, dabei können durchaus Übertragungsfehler entstanden sein. Dies bitte ich zu entschuldigen und sollte ein Fehler entdeckt werden kann man ein Issue posten.
 
-Bitte verbeitet diese Repository nur unter Studenten und gebt es nicht als eure Arbeit aus.
+## Bitte verbeitet diese Repository nur unter Studenten und gebt es nicht als eure Arbeit aus.
 
-Die Tests müsst ihr nicht herunter laden, hier ist der Link zur Github Seite: 
+### Die Tests müsst ihr nicht herunter laden, hier ist der Link zur Github Seite: 
 
-# Sollten in einem Semester Fragen dazu kommen bist du herzlich dazu eingeladen die Musterlösung hier als Issue zu posten, damit ich den Test erweitern kann.
+### Sollten in einem Semester Fragen dazu kommen bist du herzlich dazu eingeladen die Musterlösung hier als Issue zu posten, damit ich den Test erweitern kann.
