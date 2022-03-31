@@ -2,53 +2,1675 @@
     <title>Prog-C Midterm</title>
     <link rel="stylesheet" href="./default.min.css">
     <script src="./highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script>
+        hljs.highlightAll();
+    </script>
 </head>
 
 <body>
-<div class="content">
+    <header style="text-align: center; padding: 20px 0; background-color: grey; z-index: 101;"><a href="https://github.com/infopepe" style="color: blue; font-size: 20px;">Besuch mich auf Github!</a></header>
+    <div id="time">
+        <div class="time-container">
+            <div id="hour">00</div>:
+            <div id="min">00</div>:
+            <div id="sec">00</div>
 
-<h2>L&ouml;sungen ohne Gew&auml;hr! Kein Anspruch auf R&uuml;ckerstattung!</h2>
+            <button onclick="start()" class="btn btn1">Start</button>
+            <button onclick="stop()" class="btn btn2">Stop</button>
+        </div>
+    </div>
+    <div id="content">
 
-<!--─────────────────────start─────────────────────-->
+        <p>L&ouml;sungen ohne Gew&auml;hr! Benutzung auf eigene Gefahr!</p><br>
+        <button class="solve" onclick="solveAll()">Alles aufl&ouml;sen</button>
 
-<hr>
-    <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 5 &uuml;ber die Tastatur eingibt?</p>
-<pre><code class="language-c">#include &lt;stdio.h&gt;
+        <!-----------------------start----------------------->
+        <div class="quiz">
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird "Programmierung in C" ausgegeben?</p>
+                <pre><code class="language-c">int main() {
+    int x;
+    for (x = -1; x &lt;= 10; x++) {
+        if(y &lt; 5)
+            break;
+        else{
+            printf("Programmierung in C\n");
+        }
+    }
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">12</label>
+                    <label id="in" class="right"><input type="radio" name="1">7</label>
+                    <label id="in"><input type="radio" name="1">6</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Durch welche &Auml;nderung im folgenden Code wird der gr&ouml;&szlig;te gemeinsame Teiler von a und b ausgegeben?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int ggT(int, int);
+int main() {
+    int a, b;
+    scanf("%d%d", &a, &b);
+    printf("ggT von a und b ist: %d", ggT(a, b));
+    return 0;
+}
+int ggT(int a, int b) {
+    int g;
+    if (a == 0) return abs(b);
+    if (b == 0) return abs(a);
+    do {
+        g = a / b;
+        a = b;
+        b = g;
+    } while (b != 0);
+    return abs(a);
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Zeile 16 und 17 durch folgende Anweisungen ersetzen:<br><pre><code class="language-c">16   a = g;
+17   g = b;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">Zeile 2 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">2   #include &lt;math.h&gt;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">Zeile 6 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">6   scanf("%d%d", a, b);</code></pre></label>
+                    <label id="in" class="right"><input type="radio" name="1">Zeile 15 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">15   g = a % b;</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wieviel Speicherplatz belegt die Variable money im folgenden Code? Welchen Wert hat die Variable money?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+int main () {
+    enum funds {euro=1, dollar, yuan, pound, yen, cnd, lira} money;
+    money=dollar;
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">28 Bytes, 5</label>
+                    <label id="in"><input type="radio" name="1">28 Bytes, 4</label>
+                    <label id="in"><input type="radio" name="1">4 Bytes, 5</label>
+                    <label id="in" class="right"><input type="radio" name="1">4 Bytes, 2</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+int main () {
+    int x = 3;
+    int y = 5;
+    const int result = 0;
+    result = x * y;
+    printf("%d * %d = %d", x, y, result)
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Keine, der Compiler meldet einen Fehler</label>
+                    <label id="in"><input type="radio" name="1">Keine das Programm st&uuml;rzt ab</label>
+                    <label id="in"><input type="radio" name="1">3 * 5 = 15</label>
+                    <label id="in"><input type="radio" name="1">Keine, der Linker meldet einen Fehler</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der Anfangswert einer lokalen, nicht statischen Variable, die ohne Initialisierung definiert wurde, ist:</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">0xFFFFFFFF</label>
+                    <label id="in" class="right"><input type="radio" name="1">Undefiniert</label>
+                    <label id="in"><input type="radio" name="1">Abh&auml;ngig vom Compiler</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt folgende Anweisung?</p>
+                <pre><code class="language-c">printf("%d%d\n", 1&&2, 1&2)</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">10</label>
+                    <label id="in"><input type="radio" name="1">00</label>
+                    <label id="in"><input type="radio" name="1">01</label>
+                    <label id="in"><input type="radio" name="1">11</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Datenstruktur wurde bei folgender Code-Zeile benutzt?</p>
+                <pre><code class="language-c">printf("%d", foo.bar.baz);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1"><pre>
+<code class="language-c">struct foo {
+    struct bar {
+        int bar;
+    } baz;
+} foo;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">
+<pre><code class="language-c">struct foo {
+    int bar.baz;
+} foo;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">
+<pre><code class="language-c">struct foo {
+    int bar;
+    int baz;
+} foo;</code></pre></label>
+                    <label id="in" class="right"><input type="radio" name="1">
+<pre><code class="language-c">union {
+    union {
+        int baz;
+    } bar;
+} foo;</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 5 &uuml;ber die Tastatur eingibt?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
 int main(){
     int i;
     printf("%d\n", scanf("%d", &i));
     return 0;
 }
 </code></pre>
-    <form id="inputform" autocomplete="off">
-    <label id="in" class="right"><input type="radio" name="1">1</label><br>
-    <label id="in"><input type="radio" name="1">5</label><br>
-    <label id="in"><input type="radio" name="1">0</label><br>
-    <label id="in"><input type="radio" name="1">Keine, weil scanf call by reference erwartet</label>
-    </form>
-<hr>
-    <p>Welche der folgenden Aussagen &uuml;ber den 'struct' treffen zu? (3 richtige Antworten)</p>
-    <form id="checkform" autocomplete="off">
-    <label id="check" class="right"><input type="checkbox" name="1">Variablen vom struct-Typ k&ouml;nnen lokal oder global sein.</label><br>
-    <label id="check" class="right"><input type="checkbox" name="1">struct-Elemente k&ouml;nnen bei ihrer Definition initialisiert werden.</label><br>
-    <label id="check" class="right"><input type="checkbox" name="1">Mit struct k&ouml;nnen neue Datentypen definiert werden.</label><br>
-    <label id="check"><input type="checkbox" name="1">Wenn ein struct definiert wird, wird der Speicherplatz reserviert.</label><br>
-    <label id="check"><input type="checkbox" name="1">Der Zugriff auf ein struct-Element erfolgt mit dem '&gt;' Operator.</label><br>
-    <label id="check"><input type="checkbox" name="1">structs k&ouml;nnen keine structs enthalten.</label><br>
-    <input type="submit" value="Senden">
-</form>
-<hr>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">5</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">Keine, weil scanf call by reference erwartet</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird die folgende Schleife durchlaufen?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
-<!--─────────────────────end─────────────────────-->
+int main(){
+    unsigned char i = 0;
+    while (i++ != 0)
+        printf("%u ", i);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">ein Mal</label>
+                    <label id="in" class="right"><input type="radio" name="1">255 Mal</label>
+                    <label id="in"><input type="radio" name="1">unendlich Mal</label>
+                    <label id="in"><input type="radio" name="1">kein Mal</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Code-Fragment?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
-</div>
-<footer style="text-align: center; padding: 20px 0; background-color: grey;"><a href="https://github.com/infopepo" style="color: blue; font-size: 20px;">Besuch mich auf Github!</a></footer>
+int foo() {
+    return 23;
+    return 42;
+}
 
+int main(){
+    printf("%d%d", foo(), foo())
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">2342</label>
+                    <label id="in"><input type="radio" name="1">Keine, es tritt ein Compiler-Fehler auf</label>
+                    <label id="in"><input type="radio" name="1">4242</label>
+                    <label id="in" class="right"><input type="radio" name="1">2323</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie wollen das Programm wie folgt compilieren und linken:</p>
+                <pre><code class="language-c">~&gt; cc -c prog.c
+~&gt; prog.o -o prog</code></pre>
+                <p>Was passiert?</p>
+                <pre><code class="language-c">int tujetztwas(void);
+int main() {
+    tujetztwas();
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Ein Compiler-Fehler tritt aud, weil die Zeile include &lt;stdio.h&gt; fehlt</label>
+                    <label id="in"><input type="radio" name="1">Das Programm l&auml;&szlig;t sich compilieren und linken</label>
+                    <label id="in"><input type="radio" name="1">Ein Compiler-Fehler tritt aud, weil der Rumpf con tujetztwas fehlt</label>
+                    <label id="in" class="right"><input type="radio" name="1">Ein Linker-Fehler tritt auf, weil der Rumpf von tujetztwas fehlt</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher Wert wird in der Variable Color gespeichert?</p>
+                <pre><code class="language-c">typedef enum color {WHITE, BLACK = -3, RED, YELLOW, GREEN = 1, CYAN, BLUE, MAGENTA}; Color;
+Color = YELLOW;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">-1</label>
+                    <label id="in"><input type="radio" name="1">2</label>
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie schreiben ein Testprogramm app.c. In diesem Programm implementieren Sie Funktionen mit den folgenden Prototypen:</p>
+                <pre><code class="language-c">static int foo(int);
+void bar(int);
+</code></pre>
+                <p>Weiterhin implementieren Sie die folgende main-Funktion in app.c:</p>
+                <pre><code class="language-c">int main() {
+    bar(foo(42));
+    return 42;
+}
+</code></pre>
+                <p>Wird es funktionieren?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Nein, statische Funktion k&ouml;nnen nur aus statischen Funktionen aufgerufen werden, main muss also auch static sein.</label>
+                    <label id="in"><input type="radio" name="1">Nein, eine statische und eine nicht-statische Funktion k&ouml;nnen nicht geschachtelt aufgerufen werden</label>
+                    <label id="in" class="right"><input type="radio" name="1">Ja, die statische Funktion foo ist zwar static, wird aber aus dem gleichen Modul ('translation unit') heraus benutzt.</label>
+                    <label id="in"><input type="radio" name="1">Ja, statische Funktionen k&ouml;nnen immer direkt aus der main-Funktion heraus aufgerufen werden.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird die folgende Schleife durchlaufen?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    unsigned char i = -1;
+    while (i++ != 0)
+        printf("%u ", ++i);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">2^(sizeof(int)*8)/2</label>
+                    <label id="in"><input type="radio" name="1">unendlich Mal</label>
+                    <label id="in" class="right"><input type="radio" name="1">kein Mal</label>
+                    <label id="in"><input type="radio" name="1">ein Mal</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe von printf im folgenden Code?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+union date {
+    unsigned char day, month;
+    unsigned year;
+};
+
+int main(){
+    union date birth;
+    birth.day = 15;
+    birth.month = 7;
+    birth.year = 2001;
+    printf("Year: %u, Month %u, Day: %u\n", birth.year, birth.month, birth.day);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Year: 1998, Month: 7, Day: 7</label>
+                    <label id="in"><input type="radio" name="1">Year: 2001, Month: 7, Day: 15</label>
+                    <label id="in" class="right"><input type="radio" name="1">Year: 2001, Month: 209, Day: 209</label>
+                    <label id="in"><input type="radio" name="1">Year: 1998, Month: 15, Day: 15</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(){
+    char c = 0;
+    int i, mask =01, a;
+    for (i=1; i&lt;=5; i++){
+        a = c|mask;
+        mask = mask&lt;&lt;1;
+        printf("%x", a);
+    }
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">1248F</label>
+                    <label id="in"><input type="radio" name="1">12400</label>
+                    <label id="in" class="right"><input type="radio" name="1">124810</label>
+                    <label id="in"><input type="radio" name="1">ABCDE</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In welcher Zeile das folgenden Codes wird f&uuml;r die Variable des Typs student Speicher reserviert?
+                    <br>Wenn f&uuml;r char ein Byte, f&uuml;r unsigned int 4 Byte und f&uuml;r float 4 Byte ben&ouml;tigt wird, wie gro&szlig; ist mindestens der reservierte Speicherplatz f&uuml;r die Variable s[]?</p>
+                <pre><code class="language-c">typedef struct{char name[40]; unsigned int matr_nr; float grade;} student;
+student s[] = {{"Max M&uuml;ller", 1000, 1.7}, {"Marie Marx", 1001, 1.3}, {"Zoe Zorro", 1010, 4.0}};
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Zeile 1, 128 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 1, 40 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 2, 48 Byte</label>
+                    <label id="in" class="right"><input type="radio" name="1">Zeile 2, 144 Byte</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher der folgenden Datentypen kann nicht in einer switch-case Anweisung verwendet werden?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">long</label>
+                    <label id="in"><input type="radio" name="1">int</label>
+                    <label id="in"><input type="radio" name="1">enum</label>
+                    <label id="in" class="right"><input type="radio" name="1">float</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt der folgende Aufruf von printf(3)?</p>
+                <pre><code class="language-c">printf("x: 0x%x%.3f", 210/7, 210/(float)7);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">x: 0x1e30.000</label>
+                    <label id="in"><input type="radio" name="1">x: 0x1e030.000</label>
+                    <label id="in"><input type="radio" name="1">Es wird ein Fehler erzeugt, weil 210/7 den falschen Typ f&uuml;r den gegebenen Formatspezifizierer ist</label>
+                    <label id="in"><input type="radio" name="1">Es wird ein Fehler erzeugt, weil der Formatspezifizierer nicht korrekt ist</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden Codes auf der Konsole?</p>
+                <pre><code class="language-c">long i = 1;
+switch(i) {
+    case 1: printf("i = 1");
+    case 2: printf(", i = 2");
+    default: printf(", default")
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">, default</label>
+                    <label id="in"><input type="radio" name="1">error: switch quantity not an integer</label>
+                    <label id="in" class="right"><input type="radio" name="1">i = 1, i = 2, default</label>
+                    <label id="in"><input type="radio" name="1">i = 1</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wieviel Speicherplatz belegt die Variable money im folgenden Code? Welchen Wert hat die Variable money?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    enum funds {euro, dollar, yuan, pound, yen, cnd, lira} money;
+    money=lira;
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">4 Bytes, 6</label>
+                    <label id="in"><input type="radio" name="1">28 Bytes, 5</label>
+                    <label id="in"><input type="radio" name="1">4 Bytes, 5</label>
+                    <label id="in"><input type="radio" name="1">28 Bytes, 4</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Datenstruktur wurde bei folgender Code-Zeile benutzt?</p>
+                <pre><code class="language-c">printf("%d", foo.bar.baz);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1"><pre>
+<code class="language-c">struct foo {
+    union bar {
+        int baz;
+        int foo;
+        int bar;
+    } bar;
+} foo;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">
+<pre><code class="language-c">struct foo {
+    int bar;
+    int baz;
+} foo;</code></pre></label>
+                    <label id="in" x><input type="radio" name="1">
+<pre><code class="language-c">union {
+    int bar;
+    int baz;
+} foo;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">
+<pre><code class="language-c">struct foo {
+    int bar.baz;
+} foo;</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Zahl wird in nachfolgendem Programmausschnitt durch printf() ausgegeben?</p>
+                <pre><code class="language-c">int a = 027;
+int b = 0x17;
+printf("Differenz = %d", a-b);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">8</label>
+                    <label id="in" class="right"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">4</label>
+                    <label id="in"><input type="radio" name="1">10</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden C-Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+union color {
+    struct RGB {unsigned char red, green, blue;} rgb;
+    unsigned hex;
+};
+typedef union color color;
+
+int main() {
+    color pix;
+    pix.hex=0xff56dbc1;
+    printf("pix: %x red: %x green: %x blue: %x\n", pix.hex, pix.rgb.red, pix.rgb.green, pix.rgb.blue);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">pix: ff56dbc1 red: c1 green: db blue: 56</label>
+                    <label id="in"><input type="radio" name="1">pix: ff56dbc1 red: 56 green: db blue: c1</label>
+                    <label id="in"><input type="radio" name="1">pix: 56dbc1 red: c1 green: db blue: 56</label>
+                    <label id="in" class="right"><input type="radio" name="1">pix: c1db56 red: c1 green: db blue: 56</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Durch welche &Auml;nderung im folgenden Code wird der gr&ouml;&szlig;te gemeinsame Teiler von a und b ausgegeben?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int ggT(int, int);
+int main() {
+    int a, b;
+    scanf("%d%d", &a, &b);
+    printf("ggT von a und b ist: %d", ggT(a, b));
+    return 0;
+}
+int ggT(int a, int b) {
+    int g;
+    if (a == 0) return abs(b);
+    if (b == 0) return abs(a);
+    do {
+        g = a % b;
+        a = b;
+        b = g;
+    } while (b != 0);
+    return abs(g);
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Zeile 2 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">2   #include &lt;math.h&gt;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">Zeile 16 und 17 durch folgende Anweisungen ersetzen:<br><pre><code class="language-c">16   a = g;
+17   g = a;</code></pre></label>
+                    <label id="in"><input type="radio" name="1">Zeile 6 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">6   scanf("%d%d", a, b);</code></pre></label>
+                    <label id="in" class="right"><input type="radio" name="1">Zeile 19 durch folgende Anweisung ersetzen:<br><pre><code class="language-c">19   return abs(a);</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt folgende Anweisung?</p>
+                <pre><code class="language-c">printf("%d%d\n", 1&2, 1&&2)</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">01</label>
+                    <label id="in"><input type="radio" name="1">00</label>
+                    <label id="in"><input type="radio" name="1">10</label>
+                    <label id="in"><input type="radio" name="1">11</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche M&ouml;glichkeiten gibt es, mehrere Werte (z.B. Zeit und Messwert) einer Funktion zur&uuml;ckzugeben? (2 richtige Antworten)</p>
+                <form id="checkform" autocomplete="off">
+                    <label id="check"><input type="checkbox" name="1">Das Schl&uuml;sselwort return mehrfach benutzen. Bsp.: return 42; return 23;</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">call by reference</label>
+                    <label id="check"><input type="checkbox" name="1">Das Schl&uuml;sselwort return mit mehreren Werten benutzen. Bsp.: return 42,23;</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Werte in einem komplexen Datentyp 'verpacken' und diesen mit return zur&uuml;ckgeben</label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird "Programmierung in C" ausgegeben?</p>
+                <pre><code class="language-c">int main() {
+    int x;
+    for (x = -1; x &lt;= 10; x++) {
+        if(y &lt; 5)
+            continue;
+        else
+            break;
+        printf("Programmierung in C")
+    }
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">5</label>
+                    <label id="in"><input type="radio" name="1">12</label>
+                    <label id="in"><input type="radio" name="1">10</label>
+                    <label id="in" class="right"><input type="radio" name="1">0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+int reverse(int no) {
+    if(no &gt; 5)
+        return 0;
+    else
+        printf("%d, ", no++);
+    reverse (no);
+    return 0;
+}
+int main() {
+    int no = 0;
+    reverse(no);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0, 1, 2, 3, 4,</label>
+                    <label id="in"><input type="radio" name="1">0, 0, 0, ...</label>
+                    <label id="in" class="right"><input type="radio" name="1">0, 1, 2, 3, 4, 5,</label>
+                    <label id="in"><input type="radio" name="1">0, 1, 2, 3, 4, 5, 6,</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 42 &uuml;ber die Tastatur eingibt?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main(void){
+    int a = scanf("%d", &a);
+    printf("%d", a);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">42</label>
+                    <label id="in"><input type="radio" name="1">Keine, weil scanf(3) call by reference erwartet</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welchen Wert haben x und y nach der Ausf&uuml;hrung folgender arithmetischen Ausdr&uuml;cke?</p>
+                <pre><code class="language-c">int x = 5 * 9 % 4;
+int y = -3 * ++x + 3 * 18 % 7;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">x = 2, y = -1</label>
+                    <label id="in"><input type="radio" name="1">x = 5, y = -11</label>
+                    <label id="in"><input type="radio" name="1">x = 1, y = -1</label>
+                    <label id="in"><input type="radio" name="1">x = 5, y = -6</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wird die Eingabe bei folgendem Code korrekt funktionieren?</p>
+                <pre><code class="language-c">int main() {
+    scanf("%d %c", &x, &y);
+    int x;
+    char y;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Nein, scanf kann nur einzelne Variablen einlesen</label>
+                    <label id="in"><input type="radio" name="1">Nein, es m&uuml;ssen die konkreten Variablen &uuml;bergeben werden (x und y statt &x und &y)</label>
+                    <label id="in" class="right"><input type="radio" name="1">Nein, x und y sind beim Aufruf von scanf unbekannt</label>
+                    <label id="in"><input type="radio" name="1">Ja, die Werte werden korrekt in x und y gespeichert</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Anweisung liefert eine mathematisch korrekte Rundung der Zahl f dar?</p>
+                <pre><code class="language-c">float f = 3.1415;
+int a;</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">a = (int) (f+5);</code></pre></label>
+                    <label id="in" class="right"><input type="radio" name="1"><pre><code class="language-c">a = (int) (f+0.5);</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">a = (int) f + 0.5;</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">a = (int) ((int)f + 0.5);</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche M&ouml;glichkeiten gibt es, um die Sichtbarkeit von Funktionen zu ver&auml;ndern?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Funktionen sind generell nur in der eigenen Klasse sichtbar.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Die Sichtbarkeit von Funktionen kann nicht ver&auml;ndert werden.</label>
+                    <label id="in"><input type="radio" name="1">Die Schl&uuml;sselw&ouml;rter public und protected erweitern die Sichtbarkeit auf alle Module ('translation units') bzw. schr&auml;nken sie auf eigene Modul ('translation unit') ein.</label>
+                    <label id="in"><input type="radio" name="1">Das Schl&uuml;sselwort static schr&auml;nkt die Sichtbarkeit auf das eigene Modul ('translation unit') ein.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Aussagen treffen zu? (2 richtige Antworten)</p>
+                <form id="checkform" autocomplete="off">
+                    <label id="check" class="right"><input type="checkbox" name="1">C ist eine imperative Programmiersprache.</label>
+                    <label id="check"><input type="checkbox" name="1">C ist eine objektorientierte Programmiersprache.</label>
+                    <label id="check"><input type="checkbox" name="1">void test(); und void test(void); bedeuten dasselbe.</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Die Gr&ouml;&szlig;e des Datentyps int, also das Ergebnis von sizeof(int), ist compiler-abh&auml;ngig.</label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden C-Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+union color {
+    struct RGB {unsigned char r, g, b;} rgb;
+    unsigned hex;
+};
+
+typedef union color color;
+
+int main (){
+    color pix;
+    pix.hex = 0xab1234cd;
+    printf("pix:%x r:%x g:%x b:%x\n", pix.hex, pix.rgb.r, pix.rgb.g, pix.rgb.b);
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">pix:ab1234cd r:34 g:12 b:ab</label>
+                    <label id="in" class="right"><input type="radio" name="1">pix:ab1234cd r:cd g:34 b:12</label>
+                    <label id="in"><input type="radio" name="1">pix:ab1234cd r:12 g:34 b:cd</label>
+                    <label id="in"><input type="radio" name="1">pix:1234cd r:cd g:34 b:12</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt der folgende Aufruf von printf(3)?</p>
+                <pre><code class="language-c">printf("%%d %d %%d %d", 42, 23);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0 42 0 23</label>
+                    <label id="in"><input type="radio" name="1">Es wird ein Fehler erzeugt, weil nicht f&uuml;r alle Platzhalter im Formatspezifizierer Werte vorhanden sind</label>
+                    <label id="in"><input type="radio" name="1">Es wird ein Fehler erzeugt, weil der Formatspezifizierer syntaktisch nicht korrekt ist</label>
+                    <label id="in" class="right"><input type="radio" name="1">%d 42 %d 23</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe von printf im folgenden Code?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+union date {
+    unsigned char day, month;
+    unsigned year;
+};
+
+int main(){
+    union date birth;
+    birth.day = 28;
+    birth.month = 6;
+    birth.year = 1998;
+    printf("Year: %u, Month %u, Day: %u\n", birth.year, birth.month, birth.day);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Year: 1998, Month: 206, Day: 206</label>
+                    <label id="in"><input type="radio" name="1">Year: 1998, Month: 6, Day: 28</label>
+                    <label id="in"><input type="radio" name="1">Year: 1998, Month: 6, Day: 6</label>
+                    <label id="in"><input type="radio" name="1">Year: 1998, Month: 28, Day: 98</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In welcher Zeile das folgenden Codes wird f&uuml;r die Variable des Typs student Speicher reserviert?
+                    <br>Wenn f&uuml;r char ein Byte, f&uuml;r unsigned int 4 Byte und f&uuml;r float 4 Byte ben&ouml;tigt wird, wie gro&szlig; ist mindestens der reservierte Speicherplatz f&uuml;r die Variable s[]?</p>
+                <pre><code class="language-c">typedef struct{char name[32]; unsigned int matr_nr; float grade;} student;
+student s[] = {{"Max M&uuml;ller", 1000, 1.7}, {"Marie Marx", 1001, 1.3}, {"Flora Felix", 1001, 2.7}};
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Zeile 1, 120 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 1, 40 Byte</label>
+                    <label id="in" class="right"><input type="radio" name="1">Zeile 2, 120 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 2, 40 Byte</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">int a = 10;
+void func();
+int main(void) {
+    int a = 20;
+    printf("a=%d, ", a);
+    func();
+}
+
+void func() {
+    printf("a=%d\n", a)
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">a=20, a=20</label>
+                    <label id="in" class="right"><input type="radio" name="1">a=20, a=10</label>
+                    <label id="in"><input type="radio" name="1">a=10, a=10</label>
+                    <label id="in"><input type="radio" name="1">a=10, a=20</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+int main() {
+    union a {
+        int i;
+        char ch[2];
+    };
+    union a u;
+    u.i = 520;
+    u.ch[0] = 3;
+    printf("%d, %d, %d\n", u.ch[0], u.ch[1], u.i);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">3, 2, 515</label>
+                    <label id="in"><input type="radio" name="1">2, 3, 520</label>
+                    <label id="in"><input type="radio" name="1">3, 0, 520</label>
+                    <label id="in"><input type="radio" name="1">3, 2, 5</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Variante ermittelt die Anzahl der m&ouml;glichen Elemente des Feldes?</p>
+                <pre><code class="language-c">unsigned a[] = {23, 42};</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">count (a);</label>
+                    <label id="in"><input type="radio" name="1">sizeof(a);</label>
+                    <label id="in" class="right"><input type="radio" name="1">sizeof(a)/sizeof(unsigned);</label>
+                    <label id="in"><input type="radio" name="1">a.count();</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wieviel Speicherplatz belegt die Variable money im folgenden Code? Welchen Wert hat die Variable money?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    enum funds {euro, dollar, yuan, pound, yen, cnd, lira} money;
+    money=yen;
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">28 Bytes, 5</label>
+                    <label id="in"><input type="radio" name="1">4 Bytes, 5</label>
+                    <label id="in"><input type="radio" name="1">28 Bytes, 4</label>
+                    <label id="in" class="right"><input type="radio" name="1">4 Bytes, 4</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Markieren Sie den g&uuml;ltigen Bezeichner, z.B. f&uuml;r Variablen, in der Sprache C.</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">if</label>
+                    <label id="in" class="right"><input type="radio" name="1">counter_1</label>
+                    <label id="in"><input type="radio" name="1">42counter</label>
+                    <label id="in"><input type="radio" name="1">counter#1</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In der Datei lib.h finden Sie die folgenden Prototypen:</p>
+                <pre><code class="language-c">static int foo(int);
+void bar(int);
+</code></pre>
+                <p>Die Funktionen sind in der Datei lib.c implementiert. Sie schreiben ein Testprogramm app.c:</p>
+                <pre><code class="language-c">#include "lib.h"
+
+int main() {
+    bar(foo(42));
+    return 42;
+}
+</code></pre>
+                <p>Wird es funktionieren?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Nein, eine statische und eine nicht-statische Funktion k&ouml;nnen nicht geschachtelt aufgerufen werden.</label>
+                    <label id="in"><input type="radio" name="1">Ja, bar erwartet einen Parameter vom Typ int, foo liefert diesen.</label>
+                    <label id="in"><input type="radio" name="1">Ja, geschachtelte Funktionsaufrufe sind m&ouml;glich, wenn die Prototypen der Funktionen vorhanden sind.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Nein, die Funktion foo ist im Testprogramm nicht sichtbar.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der Wert von a in dezimaler Notation betr&auml;gt:</p>
+                <pre><code class="language-c">char a = (0x99<<2) ^ (0xaa>>2);</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">78</label>
+                    <label id="in"><input type="radio" name="1">14</label>
+                    <label id="in"><input type="radio" name="1">32</label>
+                    <label id="in"><input type="radio" name="1">590</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden Codes auf der Konsole?</p>
+                <pre><code class="language-c">char i = 1;
+switch(i) {
+    case 1: printf("i = 1");
+    case 2: printf(", i = 2 ");
+            break;
+    default: printf("default")
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">default</label>
+                    <label id="in"><input type="radio" name="1">error: switch quantity not an integer</label>
+                    <label id="in" class="right"><input type="radio" name="1">i = 1, i = 2</label>
+                    <label id="in"><input type="radio" name="1">i = 1</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h &gt;
+
+int reverse(int no) {
+    if(no == 0)
+        return 0;
+    else
+        printf("%d, ", --n+);
+    reverse (--no);
+    return 0;
+}
+int main() {
+    int no = 10;
+    reverse(no);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">9, 8, 7, 6, 5, 4, 3, 2, 1,</label>
+                    <label id="in"><input type="radio" name="1">8, 6, 4, 2,</label>
+                    <label id="in"><input type="radio" name="1">10, 10, 10, ...</label>
+                    <label id="in" class="right"><input type="radio" name="1">9, 7, 5, 3, 1,</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Werte haben x und y nach der Ausf&uuml;hrung folgender arithmetischen Ausdr&uuml;cke?</p>
+                <pre><code class="language-c">int x = 4 * 7 % 5;
+int y = 3 * x++ + 5 * 6 % 7;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">4, 12</label>
+                    <label id="in"><input type="radio" name="1">3, 11</label>
+                    <label id="in" class="right"><input type="radio" name="1">4, 11</label>
+                    <label id="in"><input type="radio" name="1">3, 11</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der Wert von a in hex Notation betr&auml;gt:</p>
+                <pre><code class="language-c">x = (192 >> 2) & (~(2<<2));</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">F7</label>
+                    <label id="in" class="right"><input type="radio" name="1">30</label>
+                    <label id="in"><input type="radio" name="1">48</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    union a {
+        int i;
+        char ch[2];
+    };
+    union a u = {0};
+    u.ch[0] = 2;
+    u.ch[1] = 1;
+    printf("%d, %d, %d\n", u.ch[0], u.ch[1], u.i);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">2, 1, 3</label>
+                    <label id="in" class="right"><input type="radio" name="1">2, 1, 258</label>
+                    <label id="in"><input type="radio" name="1">2, 1, 2</label>
+                    <label id="in"><input type="radio" name="1">1, 2, 258</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Zeile enth&auml;lt einen Syntaxfehler?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">a = b+++c;</label>
+                    <label id="in" class="right"><input type="radio" name="1">a = b+= ++c;</label>
+                    <label id="in"><input type="radio" name="1">a = b++ =+c;</label>
+                    <label id="in"><input type="radio" name="1">a += b+= ++c;</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher der folgenden Datentypen kann in einer switch-case Anweisung verwendet werden?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">double</label>
+                    <label id="in"><input type="radio" name="1">long double</label>
+                    <label id="in" class="right"><input type="radio" name="1">enum</label>
+                    <label id="in"><input type="radio" name="1">float</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    float d=2.25;
+    printf("%e,", d);
+    printf("%f,", d);
+    printf("%g,", d);
+    printf("%E", d);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">2.250000e+000, 2.250000, 2.25, 2.25000E+000</label>
+                    <label id="in"><input type="radio" name="1">2.2e, 2.25f, 2.00, 2.25</label>
+                    <label id="in"><input type="radio" name="1">2.2, 2.50, 2.50, 2.5</label>
+                    <label id="in"><input type="radio" name="1">Error</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Werte haben i, j, k, l und m in dezimaler Notation?</p>
+                <pre><code class="language-c">int i=32, j=0x20, k, l, m;
+k=i|j;
+l=i&j;
+m=k^l;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">32, 20, 20, 12, 12</label>
+                    <label id="in" class="right"><input type="radio" name="1">32, 32, 32, 32, 0</label>
+                    <label id="in"><input type="radio" name="1">0, 0, 0, 0, 0</label>
+                    <label id="in"><input type="radio" name="1">32, 32, 32, 32, 32</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt folgende Anweisung?</p>
+                <pre><code class="language-c">printf("%d%d\n", 1&3, 1&&3)</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">10</label>
+                    <label id="in"><input type="radio" name="1">00</label>
+                    <label id="in"><input type="radio" name="1">01</label>
+                    <label id="in" class="right"><input type="radio" name="1">11</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher Wert wird in der Variable Color gespeichert?</p>
+                <pre><code class="language-c">typedef enum color {WHITE, BLACK = -3, RED, YELLOW, GREEN = 1, CYAN, BLUE, MAGENTA}; Color;
+Color= WHITE;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">-1</label>
+                    <label id="in" class="right"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">2</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gebeben ist eine Funktion mit dem Prototyp:</p>
+                <pre><code class="language-c">void doit(char);</code></pre>
+                <p>Welches der folgenden Code-Fragment zeigt einen korrekten Aufruf der Funktion?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">void _void = doit('a');</label>
+                    <label id="in"><input type="radio" name="1">int _void = doit('a');</label>
+                    <label id="in" class="right"><input type="radio" name="1">doit(42);</label>
+                    <label id="in"><input type="radio" name="1">doit(0xfff);</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wird die Eingabe bei folgendem Code korrekt funktionieren?</p>
+                <pre><code class="language-c">int main() {
+    scanf("%d %c," &x, &y);
+    int x;
+    char y;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Nein, scanf kann nur einzelne Variablen einlesen.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Nein, x und y sind beim Aufruf von scanf unbekannt.</label>
+                    <label id="in"><input type="radio" name="1">Nein, es m&uuml;ssen die konkreten Variablen &uuml;bergeben werden (x und y, statt &x und &y).</label>
+                    <label id="in"><input type="radio" name="1">Ja, die Werte werden korrekt in x und y gespeichert.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In welcher Zeile das folgenden Codes wird f&uuml;r die Variable des Typs student Speicher reserviert?
+                    <br>Wenn f&uuml;r char ein Byte, f&uuml;r unsigned int 4 Byte und f&uuml;r float 4 Byte ben&ouml;tigt wird, wie gro&szlig; ist mindestens der reservierte Speicherplatz f&uuml;r die Variable s[]?</p>
+                <pre><code class="language-c">typedef struct{char name[40]; unsigned int matr_nr; float grade;} student;
+student s[] = {{"Max M&uuml;ller", 1000, 1.7}, {"Marie Marx", 1001, 1.3}};
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Zeile 1, 120 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 1, 40 Byte</label>
+                    <label id="in"><input type="radio" name="1">Zeile 2, 40 Byte</label>
+                    <label id="in" class="right"><input type="radio" name="1">Zeile 2, 96 Byte</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher Wert wird in der Variable Color gespeichert?</p>
+                <pre><code class="language-c">typedef enum color {WHITE, BLACK = -3, RED, YELLOW, GREEN = 1, CYAN, BLUE, MAGENTA}; Color;
+Color = BLUE;
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">-1</label>
+                    <label id="in"><input type="radio" name="1">2</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in" class="right"><input type="radio" name="1">3</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ist der folgende Aufruf von printf(3) korrekt?</p>
+                <pre><code class="language-c">printf("x: %d\n", 21.0/7);</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Nein, die Anzahl der Parameter im Formatstring stimmt nicht</label>
+                    <label id="in" class="right"><input type="radio" name="1">Nein, der Typ des auszugebenden Wertes ist keine Ganzzahl</label>
+                    <label id="in"><input type="radio" name="1">Ja, alle Platzhalter im Formatstring sind mit Werten ges&auml;ttigt</label>
+                    <label id="in"><input type="radio" name="1">Ja, der Typ des auszugebenden Wertes ist eine Ganzzahl</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Anweisung werden Sie dem folgenden Code hinzuf&uuml;gen, sodass er korrekt funktioniert?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    time_t t;
+    struct tm zeit;
+    time(&t);
+    zeit = *localtime(&t);
+    printf("Zeit: %d:%d:%d\n", zeit.tm_hour, zeit.tm_min, zeit.tm_sec);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">#include &lt;math.h&gt;</label>
+                    <label id="in" class="right"><input type="radio" name="1">#include &lt;time.h&gt;</label>
+                    <label id="in"><input type="radio" name="1">#include &lt;dos.h&gt;</label>
+                    <label id="in"><input type="radio" name="1">#include &lt;stdlib.h&gt;</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche der folgenden Aussagen &uuml;ber den 'struct' treffen zu? (3 richtige Antworten)</p>
+                <form id="checkform" autocomplete="off" action="">
+                    <label id="check" class="right"><input type="checkbox" name="1">Variablen vom struct-Typ k&ouml;nnen lokal oder global sein.</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">struct-Elemente k&ouml;nnen bei ihrer Definition initialisiert werden.</label>
+                    <label id="check"><input type="checkbox" name="1">Wenn ein struct definiert wird, wird der Speicherplatz reserviert.</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Mit struct k&ouml;nnen neue Datentypen definiert werden.</label>
+                    <label id="check"><input type="checkbox" name="1">Der Zugriff auf ein struct-Element erfolgt mit dem '&gt;' Operator.</label>
+                    <label id="check"><input type="checkbox" name="1">structs k&ouml;nnen keine structs enthalten.</label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie sind von einem Hersteller beauftragt, eine Bibliothek mathematischer Funktionen zu entwickeln.
+                    <br>F&uuml;r die &ouml;ffentliche Schnittstelle der Bib stellen Sie die Funktionsprototypen in der Header-Datei (*.h) bereit, die Implementierung der Funktionen wird als Objektcode ausgeliefert.
+                    <br>Sie implementieren aber auch interne Hilfsfunktionen, die der Benutzer nicht (so einfach ;) ) aufrufen k&ouml;nnen soll.
+                    <br>W&auml;hlen Sie den besten Ansatz.</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Da C keinerlei Mechanismen zur Steuerung der Sichtbarkeit kennt, k&ouml;nnen Sie nichts machen.</label>
+                    <label id="in"><input type="radio" name="1">Funktionen k&ouml;nnen mit _ (Unterstrich) annotiert werden und sind dann nach Konvention intern.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Sie deklarieren die internen Funktionen als static.</label>
+                    <label id="in"><input type="radio" name="1">Sie f&uuml;hren die Prototypen der internen Funktionen nicht in der Header-Datei auf.</label>
+                </form>
+            </div>
+        </div>
+        <hr>
+
+        <!-----------------------endMidterm----------------------->
+        <p class="hide" style="background-color:red; border-radius: 10px; padding: 5px;">Ab dieser Stelle kommen die Fragen nicht aus dem Midterm-Test sondern aus anderen Demo-Tests!</p>
+
+        <div class="quiz">
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">int a = 1;
+if(1 || 2 && a++)
+    printf("%d", a++);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">3</label>
+                    <label id="in" class="right"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">2</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    unsigned int a = 4;
+    unsigned int b = 7;
+    unsigned short int res = 0;
+    ras = a || b;
+    switch (res + (a | b)) {
+        default: {printf("default"); break;}
+        case 0:  {printf("0"); break;}
+        case 1:  {printf("1"); break;}
+        case 2:  {printf("2"); break;}
+        case 3:  {printf("3"); break;}
+        case 4:  {printf("4"); break;}
+        case 5:  {printf("5"); break;}
+        case 6:  {printf("6"); break;}
+        case 7:  {printf("7"); break;}
+        case 8:  {printf("8"); break;}
+        case 9:  {printf("9"); break;}
+    }
+    return 0;
+}
+</code></pre>
+                <form id="" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">2</label>
+                    <label id="in"><input type="radio" name="1">3</label>
+                    <label id="in"><input type="radio" name="1">4</label>
+                    <label id="in"><input type="radio" name="1">5</label>
+                    <label id="in"><input type="radio" name="1">6</label>
+                    <label id="in"><input type="radio" name="1">7</label>
+                    <label id="in" class="right"><input type="radio" name="1">8</label>
+                    <label id="in"><input type="radio" name="1">9</label>
+                    <label id="in"><input type="radio" name="1">10</label>
+                    <label id="in"><input type="radio" name="1">default</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Das Ergebnis des folgenden Ausdrucks lautet:</p>
+                <pre><code class="language-c">81 & (78 >> 2);</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">17</label>
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">15</label>
+                    <label id="in"><input type="radio" name="1">16</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+static char ch = 'A';
+void do_it(void) {
+    ch = 'B';
+}
+int main() {
+    do_it();
+    printf("ch: %c", ch)
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">ch: B</label>
+                    <label id="in"><input type="radio" name="1">Keine, der Compilier/Linker meldet einen Fehler</label>
+                    <label id="in"><input type="radio" name="1">Keine, die statische Variable ch ist ein do_it(void) nicht &auml;nderbar</label>
+                    <label id="in"><input type="radio" name="1">ch: A</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Die Ausgae der folgenden Schleife lautet:</p>
+                <pre><code class="language-c">int i = 6;
+while(i-- >= 0)
+    printf("%d, ", i--);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">5, 3, 1,</label>
+                    <label id="in"><input type="radio" name="1">6, 5, 4, 3, 2, 1, 0,</label>
+                    <label id="in" class="right"><input type="radio" name="1">5, 3, 1, -1,</label>
+                    <label id="in"><input type="radio" name="1">6, 4, 2, 0,</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche dedzimale Zahl wird in nachfolgendem Programmausschnitt ausgegeben?</p>
+                <pre><code class="language-c">int x = 050, y = 0x28;
+printf("x - y = %d", x-y);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">40</label>
+                    <label id="in" class="right"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">22</label>
+                    <label id="in"><input type="radio" name="1">10</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was wird als Variable x im folgenden Programm abgespeichert?</p>
+                <pre><code class="language-c">int main() {
+    char c = 'a', x = 0;
+    for(int i = 0; i&lt;8; i++) {
+        if(c & 0x01)
+            x++;
+            c>>=1;
+    }
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Das Ergebnis der Und-Verkn&uuml;pfung der Variable c und 0x01</label>
+                    <label id="in"><input type="radio" name="1">Die Anzahl der Nullern der bin&auml;ren Variable c</label>
+                    <label id="in" class="right"><input type="radio" name="1">Die Anzahl der Einsen der bin&auml;ren Variable c</label>
+                    <label id="in"><input type="radio" name="1">Die Quersumme des dezimalen ASCII-Werts der Variable c</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Die Funktion int ggT(int a, int b) berechnet den gr&ouml;&szlig;ten gemeinsamen Teiler der zahlen a und b.
+                    <br>Welche Anweisung berechnet das kleinste gemeinsame Vielfache von a und b?</p>
+                <pre><code class="language-c">int ggT(int a, int b) {
+    int c;
+    if(a &lt; 0) a = -a;
+    if(b &lt; 0) b = -b;
+    while(b != 0) {
+        c = a % b;
+        a = b;
+        b = c;
+    }
+    return a;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">a * ggT(a, b) / b;</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">ggT(a, b) / (a * b);</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">ggT(a, b) * a * b;</code></pre></label>
+                    <label id="in" class="right"><input type="radio" name="1"><pre><code class="language-c">a * b / ggT(a. b);</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Anweisung werden Sie dem folgenden Code hinzuf&uuml;gen, sodass er korrekt funktioniert?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    printf("%f\n", sqrt(36));
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">#include &lt;math.h&gt;</label>
+                    <label id="in"><input type="radio" name="1">#include &lt;time.h&gt;</label>
+                    <label id="in"><input type="radio" name="1">#include &lt;dos.h&gt;</label>
+                    <label id="in"><input type="radio" name="1">#include &lt;stdlib.h&gt;</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">void do_it(unsigned char show) {
+    unsigned int bar = 0;
+    static unsigned int foo = 0;
+    bar++;
+    foo++;
+    if(show) {
+        printf("%d", foo - bar);
+    }
+}
+int main() {
+    do_it(0);
+    do_it(1);
+    do_it(0);
+    do_it(1);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Keine</label>
+                    <label id="in"><input type="radio" name="1">Keine, der Compilier/Linker meldet einen Fehler</label>
+                    <label id="in"><input type="radio" name="1">0 0</label>
+                    <label id="in"><input type="radio" name="1">0 2</label>
+                    <label id="in" class="right"><input type="radio" name="1">1 3</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Zahl wird nach Ausf&uuml;hrung des folgenden Programmausschnitts ausgegeben?</p>
+                <pre><code class="language-c">int a = 6, b = 7, c = 8;
+printf("$d", (a > b ? (b > c ? -a : -c) : (c > b ? -c : -b)));
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">-8</label>
+                    <label id="in"><input type="radio" name="1">-7</label>
+                    <label id="in"><input type="radio" name="1">-6</label>
+                    <label id="in"><input type="radio" name="1">8</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche der folgenden Aussagen &uuml;ber den 'struct' treffen zu? (3 richtige Antworten)</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int f(double d) {
+    return 7;
+}
+int main() {
+    printf ("%i", f(1.5f));
+    return 0;
+}
+    </code></pre>
+                <form id="checkform" autocomplete="off" action="">
+                    <label id="check" class="right"><input type="checkbox" name="1">Das Programm erzeugt eine 7 als Ausgabe.</label>
+                    <label id="check"><input type="checkbox" name="1">Der Code compiliert nicht.</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Das Programm gibnt eine 0 an das Betriebssystem zur&uuml;ck.</label>
+                    <label id="check"><input type="checkbox" name="1">Das Programm gibt eine 7 an das Betriebssystem zur&uuml;ck.</label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main (int argc, char **argv) {
+    unsigned int i = 42;
+    if(i = 23) {
+        printf("Yeah!");
+    }else{
+        printf("Ney!");
+    }
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Yeah!</label>
+                    <label id="in"><input type="radio" name="1">Ney!</label>
+                    <label id="in"><input type="radio" name="1">Keine: Code l&auml;sst sich nicht &uuml;bersetzen</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was ist die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+typedef enum direction {nord, sued, ost, west} t_dir;
+int main () {
+    t_dir my_dir = ost;
+    printf("%d", my_dir);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">sued</label>
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in" class="right"><input type="radio" name="1">2</label>
+                    <label id="in"><input type="radio" name="1">ost</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">struct kurs {
+    int raum;
+    char kurs_name[25];
+};
+int main () {
+    struct kurs k[] = {{101, "Java"}, {102, "C-Prog"}, {103, "Python"}}
+    printf("%d %d", k[2].raum, k[1].kurs_name);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">102 Java</label>
+                    <label id="in"><input type="radio" name="1">101 C-Prog</label>
+                    <label id="in" class="right"><input type="radio" name="1">103 C-Prog</label>
+                    <label id="in"><input type="radio" name="1">102 Python</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+    const short int square_me  = 3;
+    const short int result = 0;
+    result = square_me * square_me;
+    printf("%d * %d = %d", square_me, square_me, result);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">3 * 3 = 9</label>
+                    <label id="in"><input type="radio" name="1">Keine, das Programm st&uuml;rzt ab</label>
+                    <label id="in" class="right"><input type="radio" name="1">Keine, der Compiler meldet einen Fehler</label>
+                    <label id="in"><input type="radio" name="1">Keine, der Linker meldet einen Fehler</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet die Ausgabe des folgenden Codes?</p>
+                <pre><code class="language-c">float i = 1;
+switch(i) {
+    default: printf("default, ");
+    case 1: printf("i = 1, ");
+    case 2: printf("i = 2");
+            break;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">i = 1, i = 2</label>
+                    <label id="in" class="right"><input type="radio" name="1">Keine, der Compiler meldet einen Fehler: switch quantity not an integer</label>
+                    <label id="in"><input type="radio" name="1">default, i = 1, i = 2</label>
+                    <label id="in"><input type="radio" name="1">i = 1</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche der folgenden Aussagen stimmen nicht mit dem untenstehenden Code &uuml;berein?</p>
+                <pre><code class="language-c">ford.focus.gewicht = 1.4;</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Die Struktur gewicht ist in die Struktur focus geschachtelt.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Die Struktur focus ist ind die Struktur ford geschachtelt.</label>
+                    <label id="in"><input type="radio" name="1">Die Struktur ford ist in die Struktur focus geschachtelt.</label>
+                    <label id="in"><input type="radio" name="1">Die Struktur ford ist in die Struktur gewicht geschachtelt.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Aussagen treffen im folgenden Code-Fragment auf die Variable 'number' nach der Wertzuweisung an diese Variable zu?</p>
+                <pre><code class="language-c">union NumberThingy {
+    float f;
+    int i;
+};
+int main() {
+    union NumberThingy u;
+    int number;
+    u.f = 42.23;
+    number = u.i;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">number hat den Wert 42.23</label>
+                    <label id="in" class="right"><input type="radio" name="1">number hat den Wert, der sich aus dem Bitstring der Flie&szlig;kommazalh 42.23, interpretiert als Ganzzahl, ergibt</label>
+                    <label id="in"><input type="radio" name="1">number hat keinen definierten Wert, sondern den Wert, der zuf&auml;llig an der Adresse von u.i im Speicher steht</label>
+                    <label id="in"><input type="radio" name="1">number hat den Wert 42</label>
+                    <label id="in"><input type="radio" name="1">number hat den Wert 0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche der folgenden Aussagen stimmen nicht mit dem untenstehenden Code &uuml;berein?</p>
+                <pre><code class="language-c">ford.focus.gewicht = 1.4;</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Die Struktur gewicht ist in die Struktur focus geschachtelt.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Die Struktur focus ist ind die Struktur ford geschachtelt.</label>
+                    <label id="in"><input type="radio" name="1">Die Struktur ford ist in die Struktur focus geschachtelt.</label>
+                    <label id="in"><input type="radio" name="1">Die Struktur ford ist in die Struktur gewicht geschachtelt.</label>
+                </form>
+            </div>
+        </div>
+        <hr class="hide">
+        <!-----------------------end----------------------->
+    </div>
 </body>
 
 <script>
+    var sec = 1, min = 1, hour = 1, timerOn = 0;
+    var secVar, minVar, hourVar;
+    
+    function setSec() {
+        if (sec >= 60) {
+            setMin();
+            sec = 0;
+        }
+        if (sec < 10) {
+            document.getElementById("sec").innerHTML = "0" + sec;
+        } else {
+            document.getElementById("sec").innerHTML = sec;
+        }
+        sec = sec + 1;
+        secVar = setTimeout(setSec, 1000);
+    }
+    
+    function setMin() {
+        if (min >= 60) {
+            setHour();
+            min = 0;
+        }
+        if (min < 10) {
+            document.getElementById("min").innerHTML = "0" + min;
+        } else {
+            document.getElementById("min").innerHTML = min;
+        }
+        min = min + 1;
+    }
+    
+    function setHour() {
+        if (hour < 10) {
+            document.getElementById("hour").innerHTML = "0" + hour;
+        } else {
+            document.getElementById("hour").innerHTML = hour;
+        }
+        hour = hour + 1;
+    }
+    
+    function start() {
+        if (!timerOn) {
+            document.getElementById("content").classList.add('visible');
+            timerOn = 1;
+            setSec();
+        }
+    }
+    
+    function stop() {
+        clearTimeout(secVar);
+        timerOn = 0;
+    }
+</script>
+<script>
+    function shuffle(array, check) {
+        /*let currentIndex = array.length - check,  randomIndex;
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }*/
+        return array;
+    }
+    function fillArray(array, length) {
+        for(let i = 0; i < length; i++){ 
+            array[i] = i;
+        }
+        return array;
+    }
 
+    var quests = document.getElementsByClassName("quiz");
+    var childrens = quests[0].children;
+    var elements = document.createDocumentFragment();
+    var quizes = quests[0].querySelectorAll('.quest');
+    var arrquiz = [];
+    fillArray(arrquiz, quizes.length);
+    shuffle(arrquiz, 0);
+
+    arrquiz.forEach(
+        function(idx) {
+    	    elements.appendChild(childrens[idx].cloneNode(true));
+        }
+    );
+    
+    quests[0].innerHTML = null;
+    quests[0].appendChild(elements);
+
+
+    var childrens1 = quests[1].children;
+    var elements1 = document.createDocumentFragment();
+    var quests1 = quests[1].querySelectorAll('.quest');
+    var arrquiz1 = [];
+    fillArray(arrquiz1, quests1.length);
+    shuffle(arrquiz1, 0);
+
+    arrquiz1.forEach(
+        function(idx1) {
+    	    elements1.appendChild(childrens1[idx1].cloneNode(true));
+        }
+    );
+    
+    quests[1].innerHTML = null;
+    quests[1].appendChild(elements1);
+    
+    var quizes2 = document.querySelectorAll('.quest');
+    quizes2.forEach(randLabels);
+    function randLabels(quizes2) {
+        var form = quizes2.querySelectorAll('form');
+        var formchildrens = form[0].children;
+        var arrlabel = [];
+        var childlength = form[0].children.length
+        fillArray(arrlabel, childlength);
+        if (quizes2.querySelectorAll('#checkform').length >= 1) {
+            shuffle(arrlabel, 1);
+        }else if(quizes2.querySelectorAll('#inputform').length >= 1){
+            shuffle(arrlabel, 0);
+        }
+        var elements2 = document.createDocumentFragment();
+
+        arrlabel.forEach(
+            function(idx2) {
+        	    elements2.appendChild(formchildrens[idx2].cloneNode(true));
+            }
+        );
+        form[0].innerHTML = null;
+        form[0].appendChild(elements2);
+    }
+</script>
+<script>
     const items = document.querySelectorAll('#in');
     items.forEach(setUpClick);
     function setUpClick(items) {
@@ -70,67 +1692,157 @@ int main(){
     function validateForm(el) {
         el.classList.add('select');
     }
+    function solveAll() {
+        document.getElementById("content").classList.add('visible');
+        items.forEach(answer);
+        checks.forEach(validateForm);
+    }
 </script>
 <style>
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-body {
-    margin: 0;
-}
-.content {
-    width: 50vw;
-    margin: 20px 0 100px 25vw;
-}
-body form *{
-    display: inline-block;
-    font-size: 20px;
-}
-hr {
-    color: black;
-}
-p {
-    font-weight: bold;
-    font-size: 25px !important;
-}
-code *, code{
-    font-family: monospace;
-    font-size: 18px;
-}
-form {
-    margin: 0;
-}
-label {
-    padding: 5px 15px 8px 8px;
-    border-radius: 15px;
-    margin: 5px;
-    width: 100%;
-}
-input{
-    margin-right: 10px;
-}
-.select {
-    cursor: not-allowed;
-}
-.select * {
-    pointer-events: none;
-}
-.select .right{
-    background-color: rgb(93, 202, 93);
-}
-input[type="submit"] {
-    width: 100%;
-    margin: 10px 0;
-    padding: 10px;
-    text-align: center;
-    background-color: white;
-    border-radius: 20px;
-    border: 3px solid #04aa6d;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-}
-input[type="submit"]:hover {
-    background-color: #04aa6d;
-}
+    * {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body {
+        margin: 0;
+    }
+    #time {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        z-index: 99;
+        font-size: 30px;
+    }
+    .time-container {
+        max-width: 250px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid grey;
+        border-radius: 10px;
+        padding: 10px 0;
+        color: rgb(82, 80, 80);
+        background-color: #fff;
+    }
+    .time-container button{
+        margin: 0 5px;
+        font-size: 20px;
+    }
+    .solve {
+        font-size: 20px;
+        padding: 10px;
+    }
+    #content {
+        width: 70vw;
+        margin: 20px 0 100px 15vw;
+    }
+    #content .quiz, #content .quest, .hide {
+        visibility: collapse;
+        height: 0;
+        overflow: hidden;
+    }
+    #content.visible .quiz, #content.visible .quest, #content.visible .hide{
+        visibility: unset;
+        height: unset;
+        overflow: unset;
+    }
+    body form *{
+        display: inline-block;
+        font-size: 20px;
+    }
+    hr {
+        color: black;
+        margin: 20px 0;
+    }
+    p {
+        font-weight: bold;
+        font-size: 25px !important;
+        margin: 0;
+        word-break: keep-all;
+    }
+    code *, code{
+        font-family: monospace;
+        font-size: 18px;
+    }
+    form {
+        margin: 0;
+    }
+    label {
+        padding: 5px 15px 8px 8px;
+        border-radius: 15px;
+        margin: 5px;
+        width: 98%;
+    }
+    input{
+        margin-right: 10px;
+    }
+    pre {
+        max-width: 100%;
+    }
+    .select {
+        cursor: not-allowed;
+    }
+    .select * {
+        pointer-events: none;
+    }
+    .select .right{
+        background-color: rgb(93, 202, 93);
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+        border: 3px solid #04aa6d;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+    }
+    input[type="submit"]:hover {
+        background-color: #04aa6d;
+    }
+    input[type=checkbox] {
+        margin-right: 10px;
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+    @media only screen and (max-width: 1250px) {
+        .solve {
+            font-size: 40px;
+        }
+        label {
+            padding: 5px 0px 8px 30px;
+            width: 95%;
+        }
+        p {
+            font-size: 50px !important;
+        }
+        #content {
+          width: 80vw;
+          margin: 20px 0 200px 10vw;
+        }
+        input[type="submit"] {
+            padding: 20px;
+            border-radius: 40px;
+            border: 16px solid #04aa6d;
+        }
+        code *, code, label, input{
+            font-size: 40px !important;
+        }
+        input[type=checkbox] {
+            transform: scale(3) translateX(-20%) translateY(-20%);
+            -webkit-transform: scale(3) translateX(-20%) translateY(-20%);
+        }
+        input[type=radio] {
+            transform: scale(3) translateX(-20%) translateY(-20%);
+            -webkit-transform: scale(3) translateX(-20%) translateY(-20%);
+        }
+        #time {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+            margin-bottom: 40px;
+        }
+    }
 </style>
