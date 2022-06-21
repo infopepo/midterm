@@ -28,6 +28,172 @@
         <div class="quiz">
             <div class="quest">
                 <hr>
+                <p>Welche Variante ermittelt die Anzahl der m&ouml;glichen Elemente des Feldes?</p>
+                <pre><code class="language-c">int a[] = {23, 42, 0};</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">sizeof(a)/sizeof(int);</label>
+                    <label id="in"><input type="radio" name="1">count(a);</label>
+                    <label id="in"><input type="radio" name="1">sizeof(a);</label>
+                    <label id="in"><input type="radio" name="1">a.count();</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der Wert von x in hexdezimaler Notation beträgt:</p>
+                <pre><code class="language-c">x = (192 &gt;&gt; 2) & (~(2 &lt;&lt; 2));</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">48</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                    <label id="in"><input type="radio" name="1">F7</label>
+                    <label id="in" class="right"><input type="radio" name="1">30</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird der Rumpf der Schleife durchlaufen?</p>
+                <pre><code class="language-c">int i = 1;
+do {
+    i&lt;&lt;=2;
+    i&gt;&gt;=1;
+} while (i&lt;16);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">4</label>
+                    <label id="in"><input type="radio" name="1">16</label>
+                    <label id="in"><input type="radio" name="1">Endlosschleife</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der Wert von x in dezimaler Notation beträgt:</p>
+                <pre><code class="language-c">int x = (160 &gt;&gt; 0x2) ^ (0x11 &lt;&lt; 0x2);</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">108</label>
+                    <label id="in"><input type="radio" name="1">85</label>
+                    <label id="in"><input type="radio" name="1">116</label>
+                    <label id="in"><input type="radio" name="1">4</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie oft wird der Rumpf der Schleife durchlaufen?</p>
+                <pre><code class="language-c">int i = 1;
+do {
+    i&lt;&lt;=2;
+    i&gt;&gt;=1;
+} while (i&lt;16);
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">4</label>
+                    <label id="in"><input type="radio" name="1">16</label>
+                    <label id="in"><input type="radio" name="1">Endlosschleife</label>
+                    <label id="in"><input type="radio" name="1">0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 'hello' über die Tastatur eingibt?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int reverse(int no) {
+    if(no == 0)
+        return 0;
+    else
+        printf("%d, ", no);
+    reverse (--no);
+    return 0;
+}
+
+int main () {
+    int no = 5;
+    reverse(no);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">1, 2, 3, 4, 5,</label>
+                    <label id="in" class="right"><input type="radio" name="1">5, 4, 3, 2, 1,</label>
+                    <label id="in"><input type="radio" name="1">5, 4, 3, 2, 1, 0,</label>
+                    <label id="in"><input type="radio" name="1">5, 5, 5, ….</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Code-Fragment, wenn der Benutzer 'hello' über die Tastatur eingibt?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main (void) {
+    int a = scanf("%d", &a);
+    printf("%d", a);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">1</label>
+                    <label id="in"><input type="radio" name="1">42</label>
+                    <label id="in"><input type="radio" name="1">Keine, weil scanf(3) call by reference erwartet</label>
+                    <label id="in" class="right"><input type="radio" name="1">0</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Für die Darstellung der IP4-Adressen wird normalerweise die Oktettenschreibweise verwendet. Jede IP4-Adresse kann auch mit einer 32-Bit int-Zahl dargestellt werden.<br>
+                   Wenn die folgende typedef eine IP4-Adresse darstellt, welche der folgenden Definitionen berechnet die korrespondierende IP4-Adresse als eine int-Zahl?<br>
+                   oc3 bezeichnet das höchstwertigste und oc0 das niederwertigste Oktett.</p>
+                <pre><code class="language-c">typedef struct ipAdd{unsigned oc3, oc2, oc1, oc0;} ipAdd;</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1"><pre><code class="language-c">unsigned add1_u = (add1.oc3&lt;&lt;24) + (add1.oc2&lt;&lt;16) + (add1.oc1&lt;&lt;8) + add1.oc0;</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">unsigned add1_u = (add1.oc0&lt;&lt;24) + (add1.oc1&lt;&lt;16) + (add1.oc2&lt;&lt;8) + add1.oc3;</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">unsigned add1_u = add1.oc3 + add1.oc2 + add1.oc1 + add1.oc0;</code></pre></label>
+                    <label id="in"><input type="radio" name="1"><pre><code class="language-c">unsigned add1_u = (add1.oc0*pow(2,24)) + (add1.oc1*pow(2,16)) + (add1.oc2*pow(2,8)) + add1.oc3;</code></pre></label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main () {
+    float y = 3.0;
+    const float y = 5;
+    y = x;
+    printf("x = %.1f, y = %.1f", x, y);
+    return 0;
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">x = 3.0, y = 5.0</label>
+                    <label id="in"><input type="radio" name="1">Keine, der Linker meldet einen Fehler</label>
+                    <label id="in"><input type="radio" name="1">x = 3.0, y = 3.0</label>
+                    <label id="in" class="right"><input type="radio" name="1">Keine, der Compiler meldet einen Fehler</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Ausgabe erzeugt das folgende Programm?</p>
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int foo() {return !1;}
+int bar() {return foo();}
+
+int main () {
+    if (bar()) {
+        printf("yo");
+    }else{
+        printf ("ney");
+    }
+}
+</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">yo</label>
+                    <label id="in" class="right"><input type="radio" name="1">ney</label>
+                    <label id="in"><input type="radio" name="1">Keine Ausgabe</label>
+                    <label id="in"><input type="radio" name="1">Ein Compiler-Fehler wird gemeldet</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
                 <p>Wie oft wird "Programmierung in C" ausgegeben?</p>
                 <pre><code class="language-c">int main() {
     int x;
@@ -83,7 +249,7 @@ int ggT(int a, int b) {
             <div class="quest">
                 <hr>
                 <p>Wieviel Speicherplatz belegt die Variable money im folgenden Code? Welchen Wert hat die Variable money?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main () {
     enum funds {euro=1, dollar, yuan, pound, yen, cnd, lira} money;
@@ -101,7 +267,7 @@ int main () {
             <div class="quest">
                 <hr>
                 <p>Welche Ausgabe erzeugt das folgende Programm?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main () {
     int x = 3;
@@ -132,7 +298,7 @@ int main () {
             <div class="quest">
                 <hr>
                 <p>Welche Ausgabe erzeugt folgende Anweisung?</p>
-                <pre><code class="language-c">printf("%d%d\n", 1&&2, 1&2)</code></pre>
+                <pre><code class="language-c">printf("%d%d\n", 1&&2, 1&2);</code></pre>
                 <form id="inputform" autocomplete="off">
                     <label id="in" class="right"><input type="radio" name="1">10</label>
                     <label id="in"><input type="radio" name="1">00</label>
@@ -524,7 +690,7 @@ int ggT(int a, int b) {
             <div class="quest">
                 <hr>
                 <p>Welche Ausgabe erzeugt folgende Anweisung?</p>
-                <pre><code class="language-c">printf("%d%d\n", 1&2, 1&&2)</code></pre>
+                <pre><code class="language-c">printf("%d%d\n", 1&2, 1&&2);</code></pre>
                 <form id="inputform" autocomplete="off">
                     <label id="in" class="right"><input type="radio" name="1">01</label>
                     <label id="in"><input type="radio" name="1">00</label>
@@ -567,7 +733,7 @@ int ggT(int a, int b) {
             <div class="quest">
                 <hr>
                 <p>Wie lautet die Ausgabe des folgenden Codes?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int reverse(int no) {
     if(no &gt; 5)
@@ -673,7 +839,7 @@ int a;</code></pre>
             <div class="quest">
                 <hr>
                 <p>Was ist die Ausgabe des folgenden C-Codes?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 union color {
     struct RGB {unsigned char r, g, b;} rgb;
@@ -772,7 +938,7 @@ void func() {
             <div class="quest">
                 <hr>
                 <p>Welche Ausgabe erzeugt das folgende Programm?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int main() {
     union a {
@@ -857,7 +1023,7 @@ int main() {
             <div class="quest">
                 <hr>
                 <p>Der Wert von a in dezimaler Notation betr&auml;gt:</p>
-                <pre><code class="language-c">char a = (0x99<<2) ^ (0xaa>>2);</code></pre>
+                <pre><code class="language-c">char a = (0x99&lt;&lt;2) ^ (0xaa&gt;&gt;2);</code></pre>
                 <form id="inputform" autocomplete="off">
                     <label id="in" class="right"><input type="radio" name="1">78</label>
                     <label id="in"><input type="radio" name="1">14</label>
@@ -886,7 +1052,7 @@ switch(i) {
             <div class="quest">
                 <hr>
                 <p>Wie lautet die Ausgabe des folgenden Codes?</p>
-                <pre><code class="language-c">#include &lt;stdio.h &gt;
+                <pre><code class="language-c">#include &lt;stdio.h&gt;
 
 int reverse(int no) {
     if(no == 0)
@@ -925,7 +1091,7 @@ int y = 3 * x++ + 5 * 6 % 7;
             <div class="quest">
                 <hr>
                 <p>Der Wert von a in hex Notation betr&auml;gt:</p>
-                <pre><code class="language-c">x = (192 >> 2) & (~(2<<2));</code></pre>
+                <pre><code class="language-c">x = (192 &gt;&gt; 2) & (~(2&lt;&lt;2));</code></pre>
                 <form id="inputform" autocomplete="off">
                     <label id="in"><input type="radio" name="1">0</label>
                     <label id="in"><input type="radio" name="1">F7</label>
@@ -1215,7 +1381,7 @@ int main() {
             <div class="quest">
                 <hr>
                 <p>Das Ergebnis des folgenden Ausdrucks lautet:</p>
-                <pre><code class="language-c">81 & (78 >> 2);</code></pre>
+                <pre><code class="language-c">81 & (78 &gt;&gt; 2);</code></pre>
                 <form id="inputform" autocomplete="off">
                     <label id="in" class="right"><input type="radio" name="1">17</label>
                     <label id="in"><input type="radio" name="1">1</label>
@@ -1279,7 +1445,7 @@ printf("x - y = %d", x-y);
     for(int i = 0; i&lt;8; i++) {
         if(c & 0x01)
             x++;
-            c>>=1;
+            c&gt;&gt;=1;
     }
 }
 </code></pre>
@@ -1539,6 +1705,7 @@ int main() {
     </div>
 </body>
 
+<!-----------------------Zeit----------------------->
 <script>
     var sec = 1, min = 1, hour = 1, timerOn = 0;
     var secVar, minVar, hourVar;
@@ -1592,9 +1759,10 @@ int main() {
         timerOn = 0;
     }
 </script>
+<!-----------------------Zufall----------------------->
 <script>
     function shuffle(array, check) {
-        /*let currentIndex = array.length - check,  randomIndex;
+        let currentIndex = array.length - check,  randomIndex;
         // While there remain elements to shuffle...
         while (currentIndex != 0) {
             // Pick a remaining element...
@@ -1602,7 +1770,7 @@ int main() {
             currentIndex--;
             // And swap it with the current element.
             [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-        }*/
+        }
         return array;
     }
     function fillArray(array, length) {
@@ -1670,6 +1838,7 @@ int main() {
         form[0].appendChild(elements2);
     }
 </script>
+<!-----------------------Answer Click----------------------->
 <script>
     const items = document.querySelectorAll('#in');
     items.forEach(setUpClick);
