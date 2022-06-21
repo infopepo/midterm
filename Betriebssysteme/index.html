@@ -1,0 +1,802 @@
+<head>
+    <title>Betriebssysteme Midterm</title>
+    <link rel="stylesheet" href="./default.min.css">
+    <script src="./highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+</head>
+
+<body>
+    <header style="text-align: center; padding: 20px 0; background-color: grey; z-index: 101;"><a href="https://github.com/infopepo" style="color: blue; font-size: 20px;">Besuch mich auf Github!</a> | <a href="https://infopepo.github.io/midterm/" style="color: blue; font-size: 20px;">Zurück</a></header>
+    <div id="time">
+        <div class="time-container">
+            <div id="hour">00</div>:
+            <div id="min">00</div>:
+            <div id="sec">00</div>
+
+            <button onclick="start()" class="btn btn1">Start</button>
+            <button onclick="stop()" class="btn btn2">Stop</button>
+        </div>
+    </div>
+    <div id="content">
+
+        <p>L&ouml;sungen ohne Gew&auml;hr! Benutzung auf eigene Gefahr!</p><br>
+        <button class="solve" onclick="solveAll()">Alles aufl&ouml;sen</button>
+
+        <!-----------------------start----------------------->
+        <div class="quiz">
+            <div class="quest">
+                <hr>
+                <p>Erstellen Sie eine neue Datei "datei3.txt", die ein Zusammenfügen von "datei1.txt" und "datei2.txt" ist.</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">cp datei1.txt datei2.txt &gt; datei3.txt</label>
+                    <label id="in"><input type="radio" name="1">mv datei1.txt datei2.txt datei3.txt</label>
+                    <label id="in" class="right"><input type="radio" name="1">cat datei1.txt datei2.txt &gt; datei3.txt</label>
+                    <label id="in"><input type="radio" name="1">ls datei1.txt datei2.txt &gt; datei3.txt</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Betrachten Sie das Schichtenmodell eines Rechner- bzw. Betriebssystems (z.B. Linux). In welcher Schicht ist die Shell (z.B. bash) angeordnet?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Anwendungsebene</label>
+                    <label id="in"><input type="radio" name="1">Hardware-Ebene</label>
+                    <label id="in"><input type="radio" name="1">Kernel, Kern</label>
+                    <label id="in"><input type="radio" name="1">Applikationsschnittstelle, API</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Bei welcher der Speicherverwaltungssstrategien wird ein Programm in der größten verfügbaren Lücke im Hauptspeicher platziert?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Worst-Fit</label>
+                    <label id="in"><input type="radio" name="1">Best-Fit</label>
+                    <label id="in"><input type="radio" name="1">First-Fit</label>
+                    <label id="in"><input type="radio" name="1">Next-Fit</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie nennt man die Technik, bei der das Betriebssystem eines Computers mehrere Programme gleichzeitig ausführt, bei der es zwischen ihnen hin und her schaltet?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Multitasking</label>
+                    <label id="in"><input type="radio" name="1">Paging</label>
+                    <label id="in"><input type="radio" name="1">Multithreading</label>
+                    <label id="in"><input type="radio" name="1">Partitionierung</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gegeben eine Inode-Datenstruktur mit 12 direkten Einträgen und einfach-, zweifach- und dreifachindirekten Indexblöcken. Ein Indexblöck hat die Größe eines Datenblockes und kann 256 Adressen aufnehmen. Ein Datenblock ist 1 kB groß.<br>
+                   Wieviele Festplattenzugriffe sind notwendig, um Byte 102403 einer Datei zu lesen?</p>
+                <img src="storage1.png" width="100%">
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">3</label>
+                    <label id="in"><input type="radio" name="1">4</label>
+                    <label id="in"><input type="radio" name="1">6</label>
+                    <label id="in"><input type="radio" name="1">8</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Was bewirkt die folgende Zeile auf der Konsole?</p>
+                <pre><code class="language-c">mkdir dir23; echo Hello &gt;&gt; dir23/file.txt</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Es wird in jedem Fall im aktuellen Ordner ein neuer Ordner dir23 angelegt. Im Ordner dir23 wird in jedem Fall eine neue Datei file.txt angelegt und mit dem Text "Hello" initialisiert.</label>
+                    <label id="in"><input type="radio" name="1">Es wird im aktuellen Ordner ein neuer Ordner dir23 angelegt. wenn der Ordner nicht existiert. Im Ordner dir23 wird eine neue Datei file.txt angelegt, wenn sie nicht existiert und mit dem Text "Hello" initialisiert/überschrieben.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Im aktuellen Ordner wird ein neuer Ordner dir23 angelegt, wenn der Ordner nicht existiert. Im Ordner dir23 wird eine neue Datei file.txt angelegt, wenn sie nicht existiert und am Ende der Datei wird der Text "Hello" hinzugefügt.</label>
+                    <label id="in"><input type="radio" name="1">Es wird eine Fehlermeldung geben, wenn Ordner dir23 nicht existiert.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Wie lautet folgende Dateiberechtigung im oktalen Ausdruck?</p>
+                <pre><code class="language-c">rwxr-x--x</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">751</label>
+                    <label id="in"><input type="radio" name="1">711</label>
+                    <label id="in"><input type="radio" name="1">447</label>
+                    <label id="in"><input type="radio" name="1">117</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Das Kommando "ls -l autoconf" zeigt Folgendes auf der Konsole:</p>
+                <pre><code class="language-c">-rwxr--r-- 1 user01 verwaltung 16704 Nov 22 17:13 autoconf</code></pre>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">chmod +x autoconf</label>
+                    <label id="in"><input type="radio" name="1">sudo chmod 744 autoconf</label>
+                    <label id="in"><input type="radio" name="1">chown g+x autoconf</label>
+                    <label id="in"><input type="radio" name="1">sudo chmod g+x autoconf</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In einer Multiprogramming-Umgebung...</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">befindet sich mehr als ein Prozess im Speicher.</label>
+                    <label id="in"><input type="radio" name="1">müssen mehrere CPUs vorhanden sein.</label>
+                    <label id="in"><input type="radio" name="1">führt der Prozessor mehr als einen Prozess zur gleichen Zeit aus.</label>
+                    <label id="in"><input type="radio" name="1">werden die Programme von mehr als einer Person entwickelt.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Arten von Fragmentierung können in einen FAT-basierten Dateisystem auftreten?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Interne und externe Fragmentierung</label>
+                    <label id="in"><input type="radio" name="1">Nur interne Fragmentierung</label>
+                    <label id="in"><input type="radio" name="1">Nur externe Fragmentierung</label>
+                    <label id="in"><input type="radio" name="1">Es tritt keine Fragmentierung auf</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ein Speicher mit der Größe 512 kB soll mit dem Buddy-Algorithmus verwaltet werden. Folgende Speicheranforderungen sind vorhanden:<br>
+                   128 kB, 228 kB, 32 kB<br>
+                   Wie viele Knoten (Splitted, Benutzt und Frei) hat der dazugehörige Binärbaum?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Splitted: 4, Benutzt: 3, Frei: 2</label>
+                    <label id="in"><input type="radio" name="1">Splitted: 3, Benutzt: 4, Frei: 2</label>
+                    <label id="in"><input type="radio" name="1">Splitted: 2, Benutzt: 4, Frei: 3</label>
+                    <label id="in"><input type="radio" name="1">Splitted: 4, Benutzt: 2, Frei: 3</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Aussage zu möglichen Problemen bei Einsatz des setuid/setgid-Bits trifft am besten zu?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Programmierfehler, z.B. buffer overflows, können einen Benutzer mit stark erweiterten Rechten ausstatten. Daher sollte der setuid/setgid-Mechanismus mit Bedacht eingesetzt werden.</label>
+                    <label id="in"><input type="radio" name="1">Es entsteht zusätzlicher Verwaltungaufwand, weil bei jedem Zugriffauf das Dateisystem die entsprechenden Bits geprüft werden müssen. Daher sollte der setuid/setgid-Mechanismus mit Bedacht eingesetzt werden.</label>
+                    <label id="in"><input type="radio" name="1">Das FAT-Dateisystem unterstützt keine setuid/setgid-Bits. Daher sollte der setuid/setgid-Mechanismus mit Bedacht eingesetzt werden.</label>
+                    <label id="in"><input type="radio" name="1">Es gibt keine Einschränkungen.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welches Werkzeug/Programm der C-Werkeugkette muß erfolgreich gelaufen sein, um aus einem C-Quelltext ein Bindemodul zu erstellen?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Compiler</label>
+                    <label id="in"><input type="radio" name="1">Linker</label>
+                    <label id="in"><input type="radio" name="1">Binder</label>
+                    <label id="in"><input type="radio" name="1">Präprozessor</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Eine Magnetfestplatte besitzt folgende Eigenschaften:<br><br>
+                   - Sektorgröße: 512 Byte<br>
+                   - Anzahl Zylinder: 6664<br>
+                   - Anzahl Sektoren pro Spur: 96<br>
+                   - Anzahl Scheiben (Oberflächen): 9<br><br>
+                   Welche Kapazitat hat die Festplatte?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">2,95 GB (2,75 GiB)</label>
+                    <label id="in"><input type="radio" name="1">327,5 GB (306,0 GiB)</label>
+                    <label id="in"><input type="radio" name="1">327,5 MB (312,3 MiB)</label>
+                    <label id="in"><input type="radio" name="1">655 MB (625 MiB)</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Aussage ist richtig?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Die Zugriffszeit für L1-Cache liegt typisch zwischen den Zugriffszeiten von Registern und Hauptspeicher.</label>
+                    <label id="in"><input type="radio" name="1">Nach aufsteigenden Zugriffszeiten geordnet ergibt sich folgende Reihenfolge der Elemente eines Rechnersystems: L1-Cache -&gt; Register -&gt; Hauptspeicher.</label>
+                    <label id="in"><input type="radio" name="1">Die Zugriffszeiten von Hauptspeicher, L1-Cache und Registern sind in etwa ähnlich, wobei der L1-Cache geringfügig schneller ist, als die anderen beiden Elemente.</label>
+                    <label id="in"><input type="radio" name="1">Die Zugriffszeiten für Hauptspeicher und L1-Cache sind in etwa gleich groß, Register haben die kleinsten Zugriffszeiten.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Eine Festplatte dreht sich mit 5400 Umdrehungen pro Minute. Wie lautet die durchschnittliche Latenzzeit (Zeit bis zum Erreichen der gewünschten Position innerhalb des Zylinders)?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">5,5 ms</label>
+                    <label id="in"><input type="radio" name="1">10 ms</label>
+                    <label id="in"><input type="radio" name="1">20 ms</label>
+                    <label id="in"><input type="radio" name="1">3,7 ms</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Eine Festplatte bietet 1000 Zylinder (0-999), der Schreiblesekopf bewegt sich abwärts und bearbeitet dann eine Anfrage an Zylinder 190. Die Warteschlange mit Zugriffsanfragen enthält folgende Einträge:<br>
+                   83, 344, 42, 412, 11, 144<br>
+                   Die Anfragen werden in folgender Reihenfolge bearbeitet:<br>
+                   83, 344, 42, 412, 11, 144<br>
+                   Welcher Disk-Scheduling-Algorithmus wurde verwendet?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">First Come First Served</label>
+                    <label id="in"><input type="radio" name="1">Shortest Seek Time First</label>
+                    <label id="in"><input type="radio" name="1">SCAN</label>
+                    <label id="in"><input type="radio" name="1">C-SCAN</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Programme dienen auf einem Linux-System zur Prozessverwaltung?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">ps, kill</label>
+                    <label id="in"><input type="radio" name="1">ps, touch</label>
+                    <label id="in"><input type="radio" name="1">run, touch</label>
+                    <label id="in"><input type="radio" name="1">echo, kill</label>
+                    <label id="in"><input type="radio" name="1">ps, procs</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ein Prozess kann bei Ankunft eines Signales u.a. eine Funktion ausführen oder das Signal ignorieren. Welches der folgenden Signale kann ein Prozess nicht ignorieren?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">SIGKILL</label>
+                    <label id="in"><input type="radio" name="1">SIGTERM</label>
+                    <label id="in"><input type="radio" name="1">SIGINT</label>
+                    <label id="in"><input type="radio" name="1">SIGQUIT</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Eine Festplatte bietet 1000 Zylinder (0-999), der Schreiblesekopf bewegt sich abwärts und bearbeitet dann eine Anfrage an Zylinder 190. Die Warteschlange mit Zugriffsanfragen enthält folgende Einträge:<br>
+                   83, 344, 42, 412, 11, 144<br>
+                   Die Anfragen werden in folgender Reihenfolge bearbeitet:<br>
+                   144, 83, 42, 11, 344, 412<br>
+                   Welcher Disk-Scheduling-Algorithmus wurde verwendet?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">Shortest Seek Time First</label>
+                    <label id="in"><input type="radio" name="1">C-LOOK</label>
+                    <label id="in"><input type="radio" name="1">C-Scan</label>
+                    <label id="in"><input type="radio" name="1">SCAN</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ein Seitenfehler...</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">ist ein Zugriff auf eine Seite, die sich nicht im Speicher befindet.</label>
+                    <label id="in"><input type="radio" name="1">ist ein Fehler auf einer bestimmten Seite.</label>
+                    <label id="in"><input type="radio" name="1">tritt auf, wenn ein Programm auf eine Seite des Speichers zugreift.</label>
+                    <label id="in"><input type="radio" name="1">ist ein Verweis auf eine Seite, die zu einem anderen Programm gehört.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In welcher Reihenfolge (von kleinen Adressen zu den großen Adressen) wird die Hexadezimalzahl AABBCCDD in einer Little-endian Maschine gespeichert?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">AA-BB-CC-DD</label>
+                    <label id="in"><input type="radio" name="1">AA-CC-BB-DD</label>
+                    <label id="in" class="right"><input type="radio" name="1">DD-CC-BB-AA</label>
+                    <label id="in"><input type="radio" name="1">DD-BB-CC-AA</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie haben ein FAT-Dateisystem mit 24 bit pro FAT-Eintrag implementiert. Ihnen steht eine Partition mit 32 GB zur Verfügung, die Sie komplett nutzen wollen. Was groB müssen die Cluster mindestens sein?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">512 B</label>
+                    <label id="in"><input type="radio" name="1">1 kB</label>
+                    <label id="in" class="right"><input type="radio" name="1">2 kB</label>
+                    <label id="in"><input type="radio" name="1">4 kB</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welcher Befehl wird zum Verändern der Priorität der Tasks in Unix verwendet?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">nice</label>
+                    <label id="in"><input type="radio" name="1">kill</label>
+                    <label id="in"><input type="radio" name="1">prioset</label>
+                    <label id="in"><input type="radio" name="1">prio</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welches Kommando kann verwendet werden, wenn eine wiederholte Aktualisierung des Status der Prozesse gewünscht ist?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">top</label>
+                    <label id="in"><input type="radio" name="1">ps -ef</label>
+                    <label id="in"><input type="radio" name="1">ps aux</label>
+                    <label id="in"><input type="radio" name="1">ps -ax</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Swapping...</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">bedeutet das Aus- bzw. Einlagern eines kompletten Prozesses.</label>
+                    <label id="in"><input type="radio" name="1">funktioniert am besten mit vielen kleinen Partitionen.</label>
+                    <label id="in"><input type="radio" name="1">bedeutet das Ein- bzw. Auslagern von Teilen eines Prozesses.</label>
+                    <label id="in"><input type="radio" name="1">ist eine andere Bezeichnung für Paging.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Die Datei profil.conf gehört dem Benutzer stud01 und der Gruppe student. Welche Rechte haben der Benutzer stud01, die Gruppe student und die anderen, wenn die oktale Zahl die Zugriffsrechte dieser Datei beschreibt?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Der Benutzer stud01 darf lesen, schreiben und ausführen. Die Gruppe student darf nur lesen. Andere dürfen nur lesen.</label>
+                    <label id="in"><input type="radio" name="1">Der Benutzer stud01 darf lesen und schreiben. Die Gruppe student darf nur lesen. Andere dürfen nur lesen.</label>
+                    <label id="in"><input type="radio" name="1">Der Benutzer stud01 darf lesen und schreiben. Die Gruppe student darf lesen und schreiben. Andere dürfen lesen und schreiben.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Der Benutzer stud01 darf lesen, schreiben und ausführen. Die Gruppe student darf nur ausführen. Andere dürfen nur ausführen.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Der BIOS Master Boot Record (MBR)...</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">befindet sich im ersten Sektor eines Speichermediums</label>
+                    <label id="in"><input type="radio" name="1">wird nur im Hauptspeicher gehalten</label>
+                    <label id="in"><input type="radio" name="1">befindet sich im ersten und im letzten Sektor eines Speichermediums</label>
+                    <label id="in"><input type="radio" name="1">befindet sich verteilt an mehreren Stellen (Redundanz) des Speichermediums</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In einem dreistufigen Paging-System mit TLB dauert ein Speicherzugriff 30 ns und der Zugriff auf den TLB 1 ns.<br>
+                   Bei welcher Trefferrate des TLB führt der Einsatz von TLB zur Halbierung der durchschnittlichen Zugriffszeiten auf die Seiten im Speicher?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">68%</label>
+                    <label id="in"><input type="radio" name="1">76%</label>
+                    <label id="in"><input type="radio" name="1">50%</label>
+                    <label id="in"><input type="radio" name="1">30%</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie haben eine Inode-Datenstruktur implementiert, die 64 direkte Einträge, einen einfach-indirekten und einen zweifach-indirekten Index bietet. Jeder Index ist so gro wie ein
+                    Datenblock. jeder Indexeintrag (Adresse) bendtigt 2 Bytes. Wie groB kann eine Datei maximal werden, wenn ein Datenblock 1 kB gross ist?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">262720 kB</label>
+                    <label id="in"><input type="radio" name="1">262720 B</label>
+                    <label id="in"><input type="radio" name="1">525440 kB</label>
+                    <label id="in"><input type="radio" name="1">525440 B</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>In einer Hauptspeicherverwaltung mit dreistufigem Paging verwendet die CPU 43 Bit für die logischen Adressen. Eine Seite ist 8 kB groß und für jeden Seitentabelleneintrag wird 8 Byte verwendet.<br>
+                   wie viele Bits werden für jede Stufe verwendet, wenn die Stufen die gleiche Anzahl von Bits verwenden?<br>
+                   Wie groß ist eine Seitentabelle?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">10 Bits, 8192 B</label>
+                    <label id="in"><input type="radio" name="1">10 Bits, 4096 B</label>
+                    <label id="in"><input type="radio" name="1">8 Bits, 4096 B</label>
+                    <label id="in"><input type="radio" name="1">9 Bits, 2048 B</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Sie sollen eine Partition zur Speicherung von autom. erstellten Prüfprotokollen bereitstellen. Die Protokolle sind jeweils 5 kB gro&szlig;.<br>
+                   Ihr Vorgesetzter hat den seltsamen Wunsch, diePartition mit einem FAT-Dateisystem zu formatieren. Es sollen möglichst viele Protokolle gespeichert werden können.<br>
+                   Wahlen Sie anhand der gegebenen Informationen eine geeignete Cluster-Grö&szlig;e. Hinweis: Fragmentierung.</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">512 kB</label>
+                    <label id="in"><input type="radio" name="1">4 kB</label>
+                    <label id="in"><input type="radio" name="1">8 kB</label>
+                    <label id="in"><input type="radio" name="1">16 kB</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gegeben sein eine dynamische Speicherverwaltung mit folgenden Speicherblöcken:</p>
+                <img src="storage1.png" width="100%">
+                <p>Welche Speicherblöcke werden bei sukzessiver Speicherplatzanforderung von 120, 40, 60 und 20 KB mit Next-Fit Strategie ausgewählt?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  30 K</label>
+                    <label id="in" class="right"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  112 K</label>
+                    <label id="in"><input type="radio" name="1">112 K  -  50 K  -  60 K  -  20 K</label>
+                    <label id="in"><input type="radio" name="1">130 K  -  112 K  -  80 K  -  40 K</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gegeben sein eine dynamische Speicherverwaltung mit folgenden Speicherblöcken:</p>
+                <img src="storage1.png" width="100%">
+                <p>Welche Speicherblöcke werden bei sukzessiver Speicherplatzanforderung von 120, 40, 60 und 20 KB mit Best-Fit Strategie ausgewählt?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  30 K</label>
+                    <label id="in"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  112 K</label>
+                    <label id="in" class="right"><input type="radio" name="1">130 K  -  50 K  -  60 K  -  20 K</label>
+                    <label id="in"><input type="radio" name="1">130 K  -  112 K  -  80 K  -  40 K</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gegeben sei folgende virtuelle 16-Bit Speicheradresse in Hexadezimaldarstellung:<br>
+                   8AC6<br><br>
+                   Die zwei höchstwertigen Bits werden nicht verwendet. Die nächsten 3 Bits stellen den Index in der Basis-Seitentabellen dar, die weiteren 3 Bits den Index in der Seitentabelle in der zweiten Stufe. Die übrigen 8 Bits bilden den Offset.<br>
+                   Bestimmen Sie anhand folgender Tabelle die dazugehörende physikalische 32 Bit Adresse. Die physikalische Speicheradresse der Basis-Seitentabelle ist 9A38B75A.</p>
+                <img src="seitentabelle1.png" width="100%">
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">01D17FC6</label>
+                    <label id="in" class="right"><input type="radio" name="1">00D17FC6</label>
+                    <label id="in"><input type="radio" name="1">Fehler! Die Adresse existiert nicht.</label>
+                    <label id="in"><input type="radio" name="1">0087D1C6</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Gegeben sein eine dynamische Speicherverwaltung mit folgenden Speicherblöcken:</p>
+                <img src="storage1.png" width="100%">
+                <p>Welche Speicherblöcke werden bei sukzessiver Speicherplatzanforderung von 120, 40, 60 und 20 KB mit Worst-Fit Strategie ausgewählt?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in" class="right"><input type="radio" name="1">130 K  -  112 K  -  80 K  -  60 K</label>
+                    <label id="in"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  112 K</label>
+                    <label id="in"><input type="radio" name="1">112 K  -  50 K  -  60 K  -  20 K</label>
+                    <label id="in"><input type="radio" name="1">130 K  -  60 K  -  80 K  -  30 K</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Welche Aussagen treffen auf ein System mit einfacher, zusammenhängender Speicherzuweisung zu?</p>
+                <form id="inputform" autocomplete="off">
+                    <label id="in"><input type="radio" name="1">Es befindet sich ein Benutzerprozess im Hauptspeicher, der einen zusammenhängenden Speicherbereich zugewiesen bekommt. Multitasking ist mit dem System nicht möglich.</label>
+                    <label id="in" class="right"><input type="radio" name="1">Es befindet sich ein Benutzerprozess im Hauptspeicher, der einen zusammenhängenden Speicherbereich zugewiesen bekommt. Mit Swapping ist auch Multitasking möglich.</label>
+                    <label id="in"><input type="radio" name="1">Es befindet sich mehr als ein -aber eine feste Anzahl- Benutzerprozesse im Hauptspeicher. Diese bekommen je einen zusammenhängenden Speicherbereich zugewiesen.</label>
+                    <label id="in"><input type="radio" name="1">Es befindet sich mehr als ein -aber eine feste Anzahl- Benutzerprozesse im Hauptspeicher. Diese bekommen zusammen einen Speicherbereich zugewiesen.</label>
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Nennen Sie vier Vorteile von SSD gegenüber Festplatten.</p>
+                <form id="checkform" autocomplete="off" action="">
+                    <label id="check" class="right"><input type="checkbox" name="1">Kurze Zugriffszeit</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Geringer Energieverbrauch</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">Mechanische Robustheit</label>
+                    <label id="check" class="right"><input type="checkbox" name="1">keine Geräuschentwicklung</label>
+                    <label id="check"><input type="checkbox" name="1">Niedriger Preis im Vergleich zu Festplatten</label>
+                    <label id="check"><input type="checkbox" name="1">Uneingeschrankte Anzahl von Schreibzyklen</label>
+                    <label id="check"><input type="checkbox" name="1">Sehr hohe Lebensdauer</label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ordnen Sie folgende Begriffe zu SSD (Solid State Disk) zu den Beschreibungen:</p>
+                <form id="sortform" autocomplete="off" action="">
+                    <label id="sort">Das endgültige Löschen der Datenblöcke <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">A</div></label>
+                    <label id="sort">Verteilung der Schreibvorgänge <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">B</div></label>
+                    <label id="sort">Markierung defekter Blöcke <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">C</div></label>
+                    <label id="sort">Erkennung/Korrektur von Bitfehlern <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">D</div></label>
+                    <label>A: Garbage Collection<br>
+                           B: Wear Leveling<br>
+                           C: Bad Block Management<br>
+                           D: Error Detection/Correction Code
+                    </label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+            <div class="quest">
+                <hr>
+                <p>Ordnen Sie folgende Begriffe den Beschreibungen zu:</p>
+                <form id="sortform" autocomplete="off" action="">
+                    <label id="sort">High Level Formatierung <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">A</div></label>
+                    <label id="sort">Partitionierung <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">B</div></label>
+                    <label id="sort">Low Level Formatierung <i>passt zu</i> <input type="text" name="1" maxlength="1" required><div class="sorthide">C</div></label>
+                    <label>A: Festiegung eines Dateisystems mit zugehöriger Struktur für eine Partition<br>
+                           B: Einteilung des Massenspeicher in logische Einheiten, die vom Betriebssystem als seperate Einheiten behandelt werden<br>
+                           C: Physische Einteilung/Strukturierung des Massenspeichers in Cluster
+                    </label>
+                    <input type="submit" value="Senden">
+                </form>
+            </div>
+        </div>
+        <hr>
+        <!-----------------------end----------------------->
+    </div>
+</body>
+
+<script>
+    var sec = 1, min = 1, hour = 1, timerOn = 0;
+    var secVar, minVar, hourVar;
+    
+    function setSec() {
+        if (sec >= 60) {
+            setMin();
+            sec = 0;
+        }
+        if (sec < 10) {
+            document.getElementById("sec").innerHTML = "0" + sec;
+        } else {
+            document.getElementById("sec").innerHTML = sec;
+        }
+        sec = sec + 1;
+        secVar = setTimeout(setSec, 1000);
+    }
+    
+    function setMin() {
+        if (min >= 60) {
+            setHour();
+            min = 0;
+        }
+        if (min < 10) {
+            document.getElementById("min").innerHTML = "0" + min;
+        } else {
+            document.getElementById("min").innerHTML = min;
+        }
+        min = min + 1;
+    }
+    
+    function setHour() {
+        if (hour < 10) {
+            document.getElementById("hour").innerHTML = "0" + hour;
+        } else {
+            document.getElementById("hour").innerHTML = hour;
+        }
+        hour = hour + 1;
+    }
+    
+    function start() {
+        if (!timerOn) {
+            document.getElementById("content").classList.add('visible');
+            timerOn = 1;
+            setSec();
+        }
+    }
+    
+    function stop() {
+        clearTimeout(secVar);
+        timerOn = 0;
+    }
+</script>
+<script>
+    function shuffle(array, check) {
+        let currentIndex = array.length - check,  randomIndex;
+        // While there remain elements to shuffle...
+        while (currentIndex != 0) {
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+        }
+        return array;
+    }
+    function fillArray(array, length) {
+        for(let i = 0; i < length; i++){ 
+            array[i] = i;
+        }
+        return array;
+    }
+
+    var quests = document.getElementsByClassName("quiz");
+    var childrens = quests[0].children;
+    var elements = document.createDocumentFragment();
+    var quizes = quests[0].querySelectorAll('.quest');
+    var arrquiz = [];
+    fillArray(arrquiz, quizes.length);
+    shuffle(arrquiz, 0);
+
+    arrquiz.forEach(
+        function(idx) {
+    	    elements.appendChild(childrens[idx].cloneNode(true));
+        }
+    );
+    
+    quests[0].innerHTML = null;
+    quests[0].appendChild(elements);
+
+    var quizes2 = document.querySelectorAll('.quest');
+    quizes2.forEach(randLabels);
+    function randLabels(quizes2) {
+        var form = quizes2.querySelectorAll('form');
+        var formchildrens = form[0].children;
+        var arrlabel = [];
+        var childlength = form[0].children.length
+        fillArray(arrlabel, childlength);
+        if (quizes2.querySelectorAll('#checkform').length >= 1) {
+            shuffle(arrlabel, 1);
+        }else if(quizes2.querySelectorAll('#inputform').length >= 1){
+            shuffle(arrlabel, 0);
+        }else if(quizes2.querySelectorAll('#sortform').length >= 1){
+            shuffle(arrlabel, 2);
+        }
+        var elements2 = document.createDocumentFragment();
+
+        arrlabel.forEach(
+            function(idx2) {
+        	    elements2.appendChild(formchildrens[idx2].cloneNode(true));
+            }
+        );
+        form[0].innerHTML = null;
+        form[0].appendChild(elements2);
+    }
+</script>
+<script>
+    const items = document.querySelectorAll('#in');
+    items.forEach(setUpClick);
+    function setUpClick(items) {
+        items.setAttribute('onclick', 'answer(this);')
+    }
+
+    function answer(el){
+        el.parentNode.classList.add('select');
+        el.setAttribute('disabled', '')
+    };
+
+    const checks = document.querySelectorAll('#checkform');
+    checks.forEach(setUpCheck);
+    function setUpCheck(checks) {
+        checks.setAttribute('onsubmit', 'return validateForm(this);');
+        checks.setAttribute('action', 'javascript:void(0);');
+    }
+    
+
+    const sorts = document.querySelectorAll('#sortform');
+    sorts.forEach(setUpCheck);
+    function setUpCheck(sorts) {
+        sorts.setAttribute('onsubmit', 'return validateForm(this);');
+        sorts.setAttribute('action', 'javascript:void(0);');
+    }
+
+    function validateForm(el) {
+        el.classList.add('select');
+    }
+    function solveAll() {
+        document.getElementById("content").classList.add('visible');
+        items.forEach(answer);
+        checks.forEach(validateForm);
+        sorts.forEach(validateForm);
+    }
+</script>
+<style>
+    * {
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+    body {
+        margin: 0;
+    }
+    img {
+        padding: 20px 0;
+    }
+    #time {
+        width: 100%;
+        position: fixed;
+        bottom: 0px;
+        z-index: 99;
+        font-size: 30px;
+    }
+    .time-container {
+        max-width: 250px;
+        margin: 0 auto 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 5px solid grey;
+        border-radius: 10px;
+        padding: 10px 0;
+        color: rgb(82, 80, 80);
+        background-color: #fff;
+    }
+    .time-container button{
+        margin: 0 5px;
+        font-size: 20px;
+    }
+    .solve {
+        font-size: 20px;
+        padding: 10px;
+    }
+    #content {
+        width: 70vw;
+        margin: 20px 0 100px 15vw;
+    }
+    #content .quiz, #content .quest, .hide {
+        visibility: collapse;
+        height: 0;
+        overflow: hidden;
+    }
+    #content.visible .quiz, #content.visible .quest, #content.visible .hide{
+        visibility: unset;
+        height: unset;
+        overflow: unset;
+    }
+    body form *{
+        display: inline-block;
+        font-size: 20px;
+    }
+    hr {
+        color: black;
+        margin: 20px 0;
+    }
+    p {
+        font-weight: bold;
+        font-size: 25px !important;
+        margin: 0;
+        word-break: keep-all;
+    }
+    code *, code{
+        font-family: monospace;
+        font-size: 18px;
+    }
+    form {
+        margin: 0;
+    }
+    label {
+        padding: 5px 15px 8px 8px;
+        border-radius: 15px;
+        margin: 5px;
+        width: 98%;
+    }
+    input{
+        margin-right: 10px;
+    }
+    pre {
+        max-width: 100%;
+    }
+    #sort input {
+        width: 3ch;
+        text-align: center;
+    }
+    .sorthide {
+        visibility: hidden;
+    }
+    .select {
+        cursor: not-allowed;
+    }
+    .select * {
+        pointer-events: none;
+    }
+    .select .right{
+        background-color: rgb(93, 202, 93);
+    }
+    .select .sorthide{
+        background-color: rgb(93, 202, 93);
+        padding: 0 8px;
+        border-radius: 5px;
+        visibility: unset;
+    }
+    input[type="submit"] {
+        width: 100%;
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+        background-color: white;
+        border-radius: 20px;
+        border: 3px solid #04aa6d;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-weight: bold;
+    }
+    input[type="submit"]:hover {
+        background-color: #04aa6d;
+    }
+    input[type=checkbox] {
+        margin-right: 10px;
+        transform: scale(1.5);
+        -webkit-transform: scale(1.5);
+    }
+    @media only screen and (max-width: 1250px) {
+        .solve {
+            font-size: 40px;
+        }
+        label{
+            padding: 5px 0px 8px 30px;
+            width: 95%;
+        }
+        p {
+            font-size: 50px !important;
+        }
+        #content {
+          width: 80vw;
+          margin: 20px 0 200px 10vw;
+        }
+        input[type="submit"] {
+            padding: 20px;
+            border-radius: 40px;
+            border: 16px solid #04aa6d;
+        }
+        code *, code, label, input, label i {
+            font-size: 40px !important;
+        }
+        input[type=checkbox] {
+            transform: scale(3) translateX(-20%) translateY(-20%);
+            -webkit-transform: scale(3) translateX(-20%) translateY(-20%);
+        }
+        input[type=radio] {
+            transform: scale(3) translateX(-20%) translateY(-20%);
+            -webkit-transform: scale(3) translateX(-20%) translateY(-20%);
+        }
+        #time {
+            -webkit-transform: scale(2);
+            transform: scale(2);
+            margin-bottom: 40px;
+        }
+    }
+</style>
